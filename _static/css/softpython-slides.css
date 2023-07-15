@@ -1,0 +1,522 @@
+
+@font-face {
+    font-family:"Archivo";
+    src:url("../fonts/Archivo/Archivo-Regular.eot");
+    src:url("../fonts/Archivo/Archivo-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Archivo/Archivo-Regular.woff2") format("woff2"),
+    url("../fonts/Archivo/Archivo-Regular.woff") format("woff"),
+    url("../fonts/Archivo/Archivo-Regular.ttf") format("truetype");
+    font-weight:400;
+    font-style:normal
+   }
+@font-face {
+    font-family:"Archivo";
+    src:url("../fonts/Archivo/Archivo-Bold.eot");
+    src:url("../fonts/Archivo/Archivo-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Archivo/Archivo-Bold.woff2") format("woff2"),
+    url("../fonts/Archivo/Archivo-Bold.woff") format("woff"),
+    url("../fonts/Archivo/Archivo-Bold.ttf") format("truetype");
+    font-weight:700;
+    font-style:normal
+   }
+@font-face {
+    font-family:"Archivo";
+    src:url("../fonts/Archivo/Archivo-BoldItalic.eot");
+    src:url("../fonts/Archivo/Archivo-BoldItalic.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Archivo/Archivo-BoldItalic.woff2") format("woff2"),
+    url("../fonts/Archivo/Archivo-BoldItalic.woff") format("woff"),
+    url("../fonts/Archivo/Archivo-BoldItalic.ttf") format("truetype");
+    font-weight:700;
+    font-style:italic
+   }
+@font-face {
+    font-family:"Archivo";
+    src:url("../fonts/Archivo/Archivo-Italic.eot");
+    src:url("../fonts/Archivo/Archivo-Italic.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Archivo/Archivo-Italic.woff2") format("woff2"),
+    url("../fonts/Archivo/Archivo-Italic.woff") format("woff"),
+    url("../fonts/Archivo/Archivo-Italic.ttf") format("truetype");
+    font-weight:400;
+    font-style:italic
+   }
+
+@font-face {
+    font-family:"Hussar";
+    font-style:normal;
+    
+    src:url("../fonts/Hussar/HussarBold-7mRE.eot");
+    src:url("../fonts/Hussar/HussarBold-7mRE.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Hussar/HussarBold-7mRE.woff2") format("woff2"),
+    url("../fonts/Hussar/HussarBold-7mRE.woff") format("woff"),
+    url("../fonts/Hussar/HussarBold-7mRE.ttf") format("truetype")
+   }
+
+@font-face {
+    font-family:"Varela";
+    font-style:normal;
+    
+    src:url("../fonts/Varela/Varela-Regular.eot");
+    src:url("../fonts/Varela/Varela-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Varela/Varela-Regular.woff2") format("woff2"),
+    url("../fonts/Varela/Varela-Regular.woff") format("woff"),
+    url("../fonts/Varela/Varela-Regular.ttf") format("truetype")
+   }
+
+@font-face {
+    font-family: "Inconsolata";
+
+    src:url("../fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.eot");
+    src:url("../fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.woff2") format("woff2"),
+    url("../fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.woff") format("woff"),
+    url("../fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf") format("truetype");
+
+    src: url("../fonts/Inconsolata/Inconsolata-VariableFont_wdth-wght.ttf");
+}
+
+
+body {
+    background-image: linear-gradient(#f9f8f3, #f9f8e3) !important;  
+}
+
+.reveal ::selection {
+    background-color: #fe6;
+    color: black;
+}
+
+.reveal code {
+    background-color: #fff !important;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc ;
+    border-radius: 5px;
+}
+
+
+h1, h2, h3, h4 {
+    font-family: "Hussar","ff-tisa-web-pro","Georgia","Arial","sans-serif" !important;
+}
+
+
+.reveal p {
+    font-family: "Archivo","proxima-nova","Helvetica Neue","Arial","sans-serif" !important;    
+}
+
+
+.reveal pre {
+        font-family: "Inconsolata","SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","Courier New","Courier","monospace" !important;
+}
+
+.reveal .alert  {
+    border-radius : 12px;
+    border:0;
+    box-shadow: 2px 2px 3px #3335;   
+}
+
+.reveal .alert-warning {
+  background-color: rgba(255, 224, 178, 0.5);
+  color: #c22;
+}
+
+.reveal .alert-info {
+   background-color: #bdf7;
+}
+
+
+.jp-InputArea-prompt, .jp-OutputArea-prompt {
+    opacity:0 !important;
+}
+
+
+.jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor {
+    margin: 3px;    
+    border-radius : 12px;
+    box-shadow: 2px 2px 3px  #ccc;
+}
+
+
+.jp-OutputArea-output pre, .jp-RenderedMarkdown pre {
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
+  
+  border-radius : 6px;
+  background-color: #fff4;
+}
+
+.jp-RenderedMarkdown pre, .jp-RenderedMarkdown .highlight {
+    
+}
+
+.reveal ul, ol {
+
+}
+
+div.output_stderr {
+
+}
+
+
+.reveal .slide-number {
+    margin-right:32px;
+    margin-bottom:25px;   
+    background-color:#fff0 !important;
+    color: #151 !important;
+}
+
+
+.reveal .controls-arrow {
+    color: green;
+}
+
+/*
+ * Hides purged inputs with empty pre
+ * 
+ * July 2023: doesn't work (yet) on Firefox  https://caniuse.com/css-has
+ */
+div.jp-Cell-inputWrapper:has(.jp-InputArea-editor pre span:empty)  {
+  display:none !important;
+}
+
+/* ***************   TABLES START  ****************** */
+
+.reveal table {
+
+}
+
+.reveal table {
+   min-width:30% !important;
+   /* margin-left:auto !important; */
+   margin-right:auto !important;
+  /* box-shadow: 1px 3px 3px 1px rgba(0, 0, 30, 0.2);*/
+   border-collapse: collapse !important;
+   border-style: hidden !important;
+   border-radius:5px;
+}
+
+.reveal table th {       
+   text-align:center;
+   padding-top:0px !important;
+   padding-bottom:0px !important;   
+   background:#2311;   
+   color:#333d; 
+   border-bottom: 2px solid #9a75 !important;
+   border-radius:5px;
+}
+
+.reveal tr:nth-child(even) {
+  background: #FAFCFF !important;
+}
+
+/* yes we need ALL those specifiers */
+.reveal table:not(.field-list) tr:nth-child(2n-1) td {
+   
+}
+
+
+/* *****************   TABLES END    **********************  */
+
+
+/* ********* PYTHON TUTOR START  **********  */
+
+/* External frame */
+
+.ExecutionVisualizer > table > tbody > tr > td:first-child{
+  border-radius:5px 0px 0px 5px;    
+  box-shadow: 1px 2px 9px 1px #999;
+}
+
+.ExecutionVisualizer > table > tbody > tr > td:last-child{
+  border-radius:0px 5px 5px 0px;
+  box-shadow: 2px 2px 9px 1px #999;
+}
+
+.ExecutionVisualizer  table  tbody  > tr > td {    
+    background: #fff !important;
+    
+   /*background:url("../img/jupman/softpython-theme/wood-small.jpg"),
+    #ffff !important;
+    background-blend-mode:hard-light;*/
+}
+
+/* Left code NOTE: For some reason we need also #codAndNav ...*/
+.ExecutionVisualizer  #codAndNav #pyCodeOutputDiv table {    
+    font-family: "Inconsolata","SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","Courier New","Courier","monospace" !important;    
+    font-size:1.12rem !important;
+    
+    padding-top:0px !important;        
+    border-top:none;        
+    border-radius:7px !important;        
+    box-shadow: 0px 2px 5px 2px #eee;
+}
+
+
+
+
+/*  legend: line that just executed, next line to execute  */
+
+.ExecutionVisualizer #legendDiv {
+    font-family: "Varela","ff-tisa-web-pro","Georgia","Arial","sans-serif" !important;
+    margin-top:25px !important;
+    font-size:0.9rem !important;    
+}
+
+.ExecutionVisualizer #legendDiv p {    
+    font-family: "Varela","ff-tisa-web-pro","Georgia","Arial","sans-serif" !important;    
+    font-size:0.9rem !important;    
+    margin-top:5px !important;
+}
+
+
+
+/* step slider */
+
+.ExecutionVisualizer #executionSlider {
+    box-shadow: 1px 0px 2px 0px #aaa;
+    height: 5px;    
+    border: none;
+    margin-bottom:21px !important;
+}    
+
+.ExecutionVisualizer #executionSlider span.ui-slider-handle {
+    background: #eee !important;
+    border:none;
+    box-shadow: 1px 1px 2px 0px #777;
+    margin-top:-3px;
+    cursor: grab;
+}
+
+
+/* First Prev Next Last buttons */
+
+.ExecutionVisualizer #vcrControls button {
+   font-family: "Varela","ff-tisa-web-pro","Georgia","Arial","sans-serif";
+   font-size:0.9rem;   
+   padding-top:0.2rem;
+   padding-bottom:0.2rem;
+   padding-left:0.7rem;
+   padding-right:0.7rem;
+   border-radius:12px;         
+   background-color: #f5f5f5 !important;   
+   border:0px solid;
+   box-shadow: 1px 1px 0px 1px;  
+}
+
+.ExecutionVisualizer #vcrControls button:hover {
+    background-color: #f8f8f8 !important;   
+}
+
+.ExecutionVisualizer #vcrControls button:active {
+    background-color: #ddde !important;   
+    box-shadow: -1px -1px 0px 1px;      
+}
+
+.ExecutionVisualizer #vcrControls button[disabled] {
+    background-color: #ddd !important;   
+
+}
+
+.ExecutionVisualizer #vcrControls button[disabled]:active {
+    background-color: #ddd !important;   
+    box-shadow: 1px 1px 0px 1px;  
+}
+
+
+/* Step 3 of 5 */
+.ExecutionVisualizer #curInstr {
+   font-family: "Varela","ff-tisa-web-pro","Georgia","Arial","sans-serif" !important;
+   font-size:1.0rem !important;
+}
+
+.ExecutionVisualizer #errorOutput {
+   font-family: "Varela","ff-tisa-web-pro","Georgia","Arial","sans-serif" !important;
+   font-size:1.0rem !important;
+}
+
+
+/* Middle vertical bar */
+.ExecutionVisualizer div.ui-resizable-handle.ui-resizable-e {
+    border-color: #d9d9df !important;
+    border-width:1px !important; 
+    box-shadow:  0px 0px 2px 0px #2223 !important;
+}
+
+
+/* Virtual monitor description line:  Print output (drag lower right corner to resize) */
+.ExecutionVisualizer #printOutputDocs {
+    font-family: "Varela","ff-tisa-web-pro","Georgia","Arial","sans-serif"  !important;        
+}
+
+/* Virtual monitor box */
+
+.ExecutionVisualizer #pyStdout {
+    font-family: "Inconsolata","SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","Courier New","Courier","monospace" !important;    
+    font-size:0.9rem !important;    
+    border:none !important;
+    box-shadow: 1px 1px 3px 1px #ccc;
+}
+
+
+/* Frames and Objects top headers */
+.ExecutionVisualizer #stackHeader,  .ExecutionVisualizer #heapHeader{    
+    font-family: "Varela","ff-tisa-web-pro","Georgia","Arial","sans-serif";  
+    font-size:1.02rem !important;
+    text-align:left !important;
+}
+
+
+/* Frames and Objects panels */
+.ExecutionVisualizer .vizLayoutTd td {
+    border-radius:0px !important;
+    box-shadow: none !important;
+}
+
+.ExecutionVisualizer .stackFrameHeader {    
+    font-family: "Varela","ff-tisa-web-pro","Georgia","Arial","sans-serif";   
+    font-size:0.9rem !important;
+}
+
+.ExecutionVisualizer .stackFrame {    
+    border-radius:6px !important;
+    box-shadow: 1px 1px 3px 1px #a0a0b5;
+}
+
+.ExecutionVisualizer .stackFrame td {    
+   font-family: "Inconsolata","SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","Courier New","Courier","monospace" !important;    
+   font-size:0.9rem !important;
+}
+
+/* Yellow heap  */
+
+.ExecutionVisualizer .heapObject td, .ExecutionVisualizer .heapObject div {
+   font-family: "Inconsolata","SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","Courier New","Courier","monospace" !important;    
+   font-size: 0.95rem !important;
+}
+
+.ExecutionVisualizer .listTbl,
+.ExecutionVisualizer .tupleTbl,
+.ExecutionVisualizer .setTbl, 
+.ExecutionVisualizer .dictTbl, 
+.ExecutionVisualizer .classTbl, 
+.ExecutionVisualizer .instTbl {
+    box-shadow: 1px 1px 3px 1px #b0b0a1;
+    border: none !important;
+}
+
+
+.ExecutionVisualizer .listTbl td,
+.ExecutionVisualizer .tupleTbl td,
+.ExecutionVisualizer .setTbl, 
+.ExecutionVisualizer .dictTbl, 
+.ExecutionVisualizer .classTbl td, 
+.ExecutionVisualizer .instTbl td {
+    border-color: #bbb !important;
+}
+
+.ExecutionVisualizer .listTbl tr td:first-child,
+.ExecutionVisualizer .tupleTbl tr td:first-child {
+    border-left: none !important;    
+}
+
+.ExecutionVisualizer .funcObj {
+    box-shadow: 1px 1px 3px 1px #ccc5;
+    padding:8px;
+    border-radius:15px;
+}
+
+/* Yellow heap end */
+
+/* ********* PYTHON TUTOR END **********  */
+
+
+/* ********** PYTHON TUTOR SLIDES START */
+
+.ExecutionVisualizer .listTbl td,
+.ExecutionVisualizer .tupleTbl td{
+    background-color: #ffffc6;
+}
+
+.ExecutionVisualizer td.toplevelHeapObject {
+  
+}
+
+
+.jp-RenderedHTMLCommon.jp-RenderedHTML.jp-OutputArea-output.jp-OutputArea-executeResult {
+  overflow-x:visible !important;
+  min-width:100% !important;
+  min-height:100% !important;
+  margin-left: 1% !important;
+  margin-right: 0% !important;
+  '
+  /*left:0px !important;*/
+  background-color:yellow;
+  
+}
+
+/*
+.jp-Cell-outputWrapper {
+  background-color:pink !important;
+  min-width:100% !important;
+  min-height:100% !important;
+  overflow-x:visible !important;
+}*/
+
+
+/*
+.jp-Cell.jp-CodeCell.jp-Notebook-cell   {
+  overflow-x:visible !important;
+   min-width:100% !important;
+  min-height:100% !important;
+    background-color:orange !important;
+
+}*/
+
+
+
+.jp-OutputPrompt.jp-OutputArea-prompt:has(+ div .ExecutionVisualizer) {
+  /*background-color:green !important;*/
+  
+  display:none !important;
+}
+
+.jp-OutputPrompt.jp-OutputArea-prompt:has(+ div python-editor) {
+  /*background-color:green !important;*/
+  
+  display:none !important;
+}
+
+
+.jp-OutputArea.jp-Cell-outputArea {
+  min-width:100% !important;
+  min-height:100% !important;
+  background-color:red;
+  overflow-x:hidden !important;
+}
+  
+
+
+.ExecutionVisualizer {
+  /* min-width: 190% !important; */
+  /* max-width:98% !important; */
+  min-height:100% !important;
+  background-color:blue !important;
+  overflow-x:hidden !important;
+}
+
+.ExecutionVisualizer .visualizer {
+
+}
+
+/************   PYTHON TUTOR SLIDES END */
+
+
+/************   ICP START */
+
+.jupman-icp-container {
+  margin-top:5vh !important;
+  margin-bottom:5vh;
+  
+  margin-left:auto;
+  margin-right:auto;
+  /* min-width:100%; */
+}
+/************   ICP END */
