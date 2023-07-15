@@ -214,6 +214,10 @@ with open(f'{raw_slides_html}.slides.html', encoding='utf8') as fr:
     });
     """)
 
+    print("MAKE_SLIDES: Removing ESERCIZI from title..")
+    ps = ps.replace("Summer School Data Science 2023 ESERCIZI", 
+               "Summer School Data Science 2023")
+
     #ps = ps.replace('require(',  'console.log("DAV:About to run require..."); require(')
     #ps = ps.replace('</body>', '')
     #ps = ps.replace('</html>',  '<div>SGURIMPO</div></body></html>')

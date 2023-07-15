@@ -173,7 +173,7 @@ div.output_stderr {
  * 
  * July 2023: doesn't work (yet) on Firefox  https://caniuse.com/css-has
  */
-div.jp-Cell-inputWrapper:has(.jp-InputArea-editor pre span:empty)  {
+div.jp-Cell-inputWrapper:has(.jp-InputArea-editor pre:only-child span:only-child:empty)  {
   display:none !important;
 }
 
@@ -485,20 +485,27 @@ div.jp-Cell-inputWrapper:has(.jp-InputArea-editor pre span:empty)  {
 }
 
 
-.jp-OutputArea.jp-Cell-outputArea {
+.jp-OutputArea.jp-Cell-outputArea {  /* can't make this work   :has(+ div  python-editor) */
   min-width:100% !important;
   min-height:100% !important;
-  background-color:red;
+  /*background-color:red;*/
   overflow-x:hidden !important;
 }
-  
+
+.jp-OutputArea.jp-Cell-outputArea { /* can't make this work  :has(+ div .ExecutionVisualizer) */
+  min-width:100% !important;
+  min-height:100% !important;
+  /*background-color:red;*/
+  overflow-x:hidden !important;
+}
+
 
 
 .ExecutionVisualizer {
   /* min-width: 190% !important; */
   /* max-width:98% !important; */
   min-height:100% !important;
-  background-color:blue !important;
+  /*background-color:blue !important;*/
   overflow-x:hidden !important;
 }
 
