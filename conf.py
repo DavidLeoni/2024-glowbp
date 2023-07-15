@@ -59,7 +59,7 @@ jm.ipynb_show_answer = "Mostra risposta"
 jm.ipynb_hide_answer = "NAscondi"
 # Use plural
 jm.ipynb_solutions = "SOLUZIONI"
-jm.ipynb_exercises = "ESERCIZI"
+jm.ipynb_exercises = ""
 
 #NOTE: this string is not just a translation, it's also a command that when building the exercises
 #      removes the content after it in the Python cell it is contained in
