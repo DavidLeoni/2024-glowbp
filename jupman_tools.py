@@ -637,6 +637,7 @@ class Jupman:
         self.purge_io = "jupman-purge-io"
         self.purge_input = "jupman-purge-input"
         self.purge_output = "jupman-purge-output"
+        self.purge_text_output = "jupman-purge-text-output"
         
 
 
@@ -656,7 +657,7 @@ class Jupman:
             @since 3.3
         """
 
-        self.directive_tags = [self.preprocess, self.purge, self.purge_input, self.purge_output, self.purge_io]
+        self.directive_tags = [self.preprocess, self.purge, self.purge_input, self.purge_output, self.purge_text_output,  self.purge_io]
         """ Code cells containing these tags are not considered a solution.
             @since 3.3
         """
@@ -861,7 +862,7 @@ class Jupman:
             
             with open(source_abs_fn) as sol_source_f:
                 text = sol_source_f.read()
-                found_total_purge = self.purge_input in text or self.purge_output in text or self.purge_io in text or ''
+                found_total_purge = self.purge_input in text or self.purge_output or self.purge_text_output in text or self.purge_io in text or ''
                 if found_total_purge:
                     raise ValueError("Found %s in python file %s, but it is only allowed in notebooks!" % (found_total_purge, source_fn))
                 
@@ -879,7 +880,25 @@ class Jupman:
             for cell in nb_node.cells:            
                 if cell.cell_type == "code":                                            
                     if self.purge_output in cell.source or self.purge_io in cell.source:
-                        cell.outputs = []                        
+                        cell.outputs = []       
+                    """
+                       "outputs": [
+                                    {
+                                    "name": "stdout",
+                                    "output_type": "stream",
+                                    "text": [
+                                    "['a', 'b', 'c']\n"
+                                    ]
+                                    },
+
+                    """
+                    if self.purge_text_output in cell.source:
+                        new_outputs = []
+                        for op in cell.outputs:
+                    
+                            if "text" not in op:                                 
+                                new_outputs.append(op)
+                        cell.outputs = new_outputs
                     if (self.purge_input in cell.source and self.purge_output in cell.source) \
                         or self.purge_io in cell.source:
                         cell.metadata['nbsphinx'] = 'hidden'
@@ -967,7 +986,23 @@ class Jupman:
                                                             
                     if self.purge_output in cell.source or self.purge_io in cell.source:
                         stripped_cell.outputs = []
-                        
+                    """
+                       "outputs": [
+                                    {
+                                    "name": "stdout",
+                                    "output_type": "stream",
+                                    "text": [
+                                    "['a', 'b', 'c']\n"
+                                    ]
+                                    },
+
+                    """
+                    if self.purge_text_output in cell.source:
+                        new_outputs = []
+                        for op in cell.outputs:                            
+                            if "text" not in op:                                 
+                                new_outputs.append(op)
+                        stripped_cell.outputs = new_outputs    
                     if (self.purge_input in cell.source and self.purge_output in cell.source) \
                         or self.purge_io in cell.source:
                         stripped_cell.metadata['nbsphinx'] = 'hidden'
@@ -1356,7 +1391,8 @@ class Jupman:
             ret = s
             ret = re.sub(r"conf\.jm\.python_tutor\(.*", "", ret)
             #TODO too ad-hoc, improve
-            ret = ret.replace('#jupman-purge-input', '')
+            ret = ret.replace('#jupman-purge-input', '') \
+                     .replace('#jupman-purge-text-output', '')            
             #ret = ret.strip() 
             
             return ret
@@ -1366,7 +1402,7 @@ class Jupman:
 
 
 
-    def icp(self, content_editable=True, width="60vw", height="65vh"):
+    def icp(self, content_editable=True, width="55vw", height="65vh"):
         """ Embeds an ICP console in the output of the current Jupyter cell,
             Code to execute is taken from *current* cell stripped from 
             the call to pytut() itself. 
@@ -1411,7 +1447,8 @@ class Jupman:
         new_code = self.sol_to_ex_code(new_code, 'TODO', parse_directives=False)
         
         #TODO too ad-hoc, improve
-        new_code = new_code.replace('#jupman-purge-input', '')
+        new_code = new_code.replace('#jupman-purge-input', '') \
+                           .replace('#jupman-purge-text-output', '')      
         new_code = new_code.strip()  
         
         

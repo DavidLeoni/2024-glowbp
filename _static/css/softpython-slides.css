@@ -168,6 +168,15 @@ div.output_stderr {
     color: green;
 }
 
+.reveal blockquote, .reveal blockquote p  {
+    font-family: "Inconsolata","SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","Courier New","Courier","monospace" !important;
+    text-align:center;   
+    border-left:none;
+    font-style: inherit;
+    font-size:1.4rem;
+}
+
+
 /*
  * Hides purged inputs with empty pre
  * 

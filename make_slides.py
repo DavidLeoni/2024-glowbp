@@ -142,7 +142,7 @@ with open(f'{raw_slides_html}.slides.html', encoding='utf8') as fr:
 
     jupman = """
     <link rel="stylesheet" href="../_static/css/jupman.css">
-    <script type="text/javascript" src="../_static/js/pytutor-embed.bundle.js"></script>    
+    <script type="text/javascript" src="../_static/js/pytutor-embed.bundle.min.js"></script>    
     <script type="text/javascript" src="../_static/js/jupman.js"></script>            
     """
     icp = """
@@ -213,10 +213,6 @@ with open(f'{raw_slides_html}.slides.html', encoding='utf8') as fr:
         updateVizs(event.currentSlide);            
     });
     """)
-
-    print("MAKE_SLIDES: Removing ESERCIZI from title..")
-    ps = ps.replace("Summer School Data Science 2023 ESERCIZI", 
-               "Summer School Data Science 2023")
 
     #ps = ps.replace('require(',  'console.log("DAV:About to run require..."); require(')
     #ps = ps.replace('</body>', '')

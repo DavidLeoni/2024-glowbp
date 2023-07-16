@@ -2848,7 +2848,7 @@ def pytut(disableHeapNesting=True, transform=None, text_length=0):
     
     
     inject +=  """        
-        <script src="%s_static/js/pytutor-embed.bundle.js" #type="application/javascript"></script>
+        <script src="%s_static/js/pytutor-embed.bundle.min.js" #type="application/javascript"></script>
     """ % relpath
     
     
