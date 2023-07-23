@@ -36,7 +36,7 @@ copyright = '# 2020 - %s, %s' % (datetime.datetime.now().year, author)
 #####     AND IT SHOULD ALSO BE THE SAME NAME ON READTHEDOCS 
 #####     (like i.e. jupman.readthedocs.org)
 
-jm.filename = 'jupman'   # The filename without the extension
+jm.filename = 'ssds'   # The filename without the extension
 
 # common files for exercise and exams as paths. Paths are intended relative to the project root. Globs like /**/* are allowed.
 
