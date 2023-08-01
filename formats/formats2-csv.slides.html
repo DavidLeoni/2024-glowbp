@@ -15546,7 +15546,7 @@ aquila,25
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;_csv.reader object at 0x7f7a1d3c2b50&gt;
+<pre>&lt;_csv.reader object at 0x7fddb7c43b50&gt;
 </pre>
 </div>
 </div>
@@ -15870,7 +15870,7 @@ OrderedDict([(&#39;animale&#39;, &#39;aquila&#39;), (&#39;anni&#39;, &#39;25&#39
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Leggere-e-scrivere-un-CSV-1/2">Leggere e scrivere un CSV 1/2<a class="anchor-link" href="#Leggere-e-scrivere-un-CSV-1/2">&#182;</a></h3><p>Per scrivere un nuovo CSV prendendo dati da un CSV esistente:</p>
+<h3 id="Leggere-e-scrivere-un-CSV-1/2">Leggere e scrivere un CSV 1/2<a class="anchor-link" href="#Leggere-e-scrivere-un-CSV-1/2">&#182;</a></h3><p>Per scrivere un nuovo CSV <a href="esempio-1-arricchito.csv">esempio-1-arricchito.csv</a> prendendo dati da un CSV esistente:</p>
 <ul>
 <li>annidare un <code>with</code> per la lettura dentro uno per la scrittura</li>
 </ul>
@@ -15901,9 +15901,7 @@ OrderedDict([(&#39;animale&#39;, &#39;aquila&#39;), (&#39;anni&#39;, &#39;25&#39
         
         <span class="k">for</span> <span class="n">riga</span> <span class="ow">in</span> <span class="n">lettore</span><span class="p">:</span>
             <span class="n">riga</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;qualcos&#39;altro&quot;</span><span class="p">)</span>
-            <span class="n">scrittore</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">riga</span><span class="p">)</span>
-            <span class="n">scrittore</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">riga</span><span class="p">)</span>
-            <span class="n">scrittore</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">riga</span><span class="p">)</span>    
+            <span class="n">scrittore</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">riga</span><span class="p">)</span>           
             
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finito di scrivere&quot;</span><span class="p">,</span> <span class="n">csv_da_scrivere</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
