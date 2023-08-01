@@ -15269,8 +15269,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="np.array">np.array<a class="anchor-link" href="#np.array">&#182;</a></h2><p>Importiamo modulo <code>numpy</code> e rinominiamo in <code>np</code>:</p>
-
+<h2 id="np.array">np.array<a class="anchor-link" href="#np.array">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -15282,7 +15281,7 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>   <span class="c1">#  rinominiamo in `np`</span>
 </pre></div>
 
      </div>
@@ -15303,7 +15302,6 @@ div.jp-OutputPrompt {
 <li><p>regione <em>contigua</em> di memoria</p>
 </li>
 </ul>
-<p>Es. matrice 3x2:</p>
 
 </div>
 </div>
@@ -15316,8 +15314,7 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span>  <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>  <span class="p">)</span>   <span class="c1"># UN SOLO PARAMETRO tupla</span>
-                            <span class="c1"># 2 righe, 3 colonne</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span>  <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>  <span class="p">)</span>   <span class="c1"># UN SOLO PARAMETRO tupla: 2 righe, 3 colonne</span>
 </pre></div>
 
      </div>
@@ -15365,7 +15362,7 @@ div.jp-OutputPrompt {
 
 </div>
 
-</div>
+</div><div class="fragment" >
 <div id="cell-id=bb201891" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15418,7 +15415,7 @@ div.jp-OutputPrompt {
 
 </div>
 
-</div></section><section >
+</div></div></section><section >
 <div id="cell-id=af154ef7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16595,7 +16592,8 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">va</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+               <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
 </pre></div>
 
      </div>
@@ -16611,7 +16609,7 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vc</span> <span class="o">=</span> <span class="n">va</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mc</span> <span class="o">=</span> <span class="n">ma</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -16627,7 +16625,7 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vc</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mc</span>
 </pre></div>
 
      </div>
@@ -16649,7 +16647,8 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([1, 2, 3])</pre>
+<pre>array([[1, 2, 3],
+       [4, 5, 6]])</pre>
 </div>
 
 </div>
@@ -16666,7 +16665,7 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
 </pre></div>
 
      </div>
@@ -16682,7 +16681,7 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vc</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mc</span>
 </pre></div>
 
      </div>
@@ -16704,7 +16703,8 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([100,   2,   3])</pre>
+<pre>array([[100,   2,   3],
+       [  4,   5,   6]])</pre>
 </div>
 
 </div>
@@ -16721,7 +16721,7 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">va</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ma</span>
 </pre></div>
 
      </div>
@@ -16743,7 +16743,8 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([1, 2, 3])</pre>
+<pre>array([[1, 2, 3],
+       [4, 5, 6]])</pre>
 </div>
 
 </div>
@@ -17141,7 +17142,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div><div id="cell-id=550de0da" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=550de0da" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17151,22 +17152,7 @@ div.jp-OutputPrompt {
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">],</span>
                <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">30</span><span class="p">]])</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=4c5942d5" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ma</span> <span class="o">/</span> <span class="mi">4</span>
+<span class="n">ma</span> <span class="o">/</span> <span class="mi">4</span>
 </pre></div>
 
      </div>
@@ -17182,7 +17168,7 @@ div.jp-OutputPrompt {
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
 
 
 
@@ -17224,7 +17210,46 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></div><div class="fragment" >
+</div></div><div class="fragment" ><div id="cell-id=f5931922-stripped" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[[inf inf nan]
+ [inf nan inf]]
+DOPO
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
 <div id="cell-id=35c9b7c0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17232,10 +17257,8 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <div class="alert alert-warning">
-<p>stdin:1: RuntimeWarning: divide by zero encountered in true_divide</p>
+stdin:1: RuntimeWarning: divide by zero encountered in true_divide       
 </div>
-<div class="highlight"><pre><span></span><span class="n">DOPO</span>
-</pre></div>
 
 </div>
 </div>
@@ -17248,7 +17271,7 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>NOTA: l’esecuzione del programma <strong>prosegue comunque</strong> ma potrebbe STAMPARE un warning extra</li>
+<li>l’esecuzione del programma <strong>prosegue comunque</strong> + STAMPA warning extra</li>
 </ul>
 
 </div>
@@ -18603,7 +18626,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Esercizi">Esercizi<a class="anchor-link" href="#Esercizi">&#182;</a></h2><h3 id="SoftPython---numpy-2"><a href="https://it.softpython.org/matrices-lists/numpy2-sol.html">SoftPython - numpy 2</a><a class="anchor-link" href="#SoftPython---numpy-2">&#182;</a></h3><p>diversi esercizi di solito con due soluzioni proposte:</p>
+<h2 id="Esercizi">Esercizi<a class="anchor-link" href="#Esercizi">&#182;</a></h2><h3 id="SoftPython---numpy-2"><a href="https://it.softpython.org/matrices-numpy/matrices-numpy2-sol.html">SoftPython - numpy 2</a><a class="anchor-link" href="#SoftPython---numpy-2">&#182;</a></h3><p>diversi esercizi di solito con due soluzioni proposte:</p>
 <ul>
 <li>una lenta coi <code>for</code></li>
 <li>una veloce senza cicli</li>
