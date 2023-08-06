@@ -15546,7 +15546,7 @@ aquila,25
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;_csv.reader object at 0x7fddb7c43b50&gt;
+<pre>&lt;_csv.reader object at 0x7f22ef202bd0&gt;
 </pre>
 </div>
 </div>
@@ -15808,9 +15808,9 @@ OrderedDict([(&#39;animale&#39;, &#39;aquila&#39;), (&#39;anni&#39;, &#39;25&#39
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file-scritto.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_da_scrivere</span><span class="p">:</span> 
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file-scritto.csv&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span><span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_scrittura</span><span class="p">:</span> 
     
-    <span class="n">scrittore</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csv_da_scrivere</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>    
+    <span class="n">scrittore</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">f_scrittura</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>    
     
     <span class="n">scrittore</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">&#39;Questo&#39;</span><span class="p">,</span> <span class="s1">&#39;è&#39;</span><span class="p">,</span> <span class="s1">&#39;uno header&#39;</span><span class="p">])</span>
     <span class="n">scrittore</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">&#39;Questa&#39;</span><span class="p">,</span> <span class="s1">&#39;è&#39;</span><span class="p">,</span> <span class="s1">&#39;una riga&#39;</span><span class="p">])</span>
@@ -15872,7 +15872,7 @@ OrderedDict([(&#39;animale&#39;, &#39;aquila&#39;), (&#39;anni&#39;, &#39;25&#39
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Leggere-e-scrivere-un-CSV-1/2">Leggere e scrivere un CSV 1/2<a class="anchor-link" href="#Leggere-e-scrivere-un-CSV-1/2">&#182;</a></h3><p>Per scrivere un nuovo CSV <a href="esempio-1-arricchito.csv">esempio-1-arricchito.csv</a> prendendo dati da un CSV esistente:</p>
 <ul>
-<li>annidare un <code>with</code> per la lettura dentro uno per la scrittura</li>
+<li>annidare un <code>with</code> per la scrittura dentro uno per la lettura</li>
 </ul>
 
 </div>
@@ -15887,23 +15887,23 @@ OrderedDict([(&#39;animale&#39;, &#39;aquila&#39;), (&#39;anni&#39;, &#39;25&#39
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
-    
-<span class="c1"># Per scrivere, RICORDATI di specificare l&#39;opzione &#39;w&#39;</span>
-<span class="c1"># ATTENZIONE: &#39;w&#39; rimpiazza *completamente* eventuali file  esistenti!</span>
-<span class="c1"># ATTENZIONE: l&#39;handle *esterno* l&#39;abbiamo chiamato  csv_da_scrivere</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;esempio-1-arricchito.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_da_scrivere</span><span class="p">:</span> 
-    <span class="n">scrittore</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csv_da_scrivere</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+
+<span class="c1"># ATTENZIONE: l&#39;handle *esterno* l&#39;abbiamo chiamato f_lettura</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;esempio-1.csv&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_lettura</span><span class="p">:</span>    
+    <span class="n">lettore</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f_lettura</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>      
 
     <span class="c1"># Nota come questo &#39;with&#39; sia dentro quello esterno    </span>
-    <span class="c1"># ATTENZIONE: l&#39;handle *interno* l&#39;abbiamo chiamato csv_da_leggere</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;esempio-1.csv&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_da_leggere</span><span class="p">:</span>    
-        <span class="n">lettore</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csv_da_leggere</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>      
+    <span class="c1"># Per scrivere, RICORDATI di specificare l&#39;opzione &#39;w&#39;</span>
+    <span class="c1"># ATTENZIONE: &#39;w&#39; rimpiazza *completamente* eventuali file  esistenti!</span>
+    <span class="c1"># ATTENZIONE: l&#39;handle *interno* l&#39;abbiamo chiamato  f_scrittura</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;esempio-1-arricchito.csv&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span><span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_scrittura</span><span class="p">:</span> 
+        <span class="n">scrittore</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">f_scrittura</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
         
         <span class="k">for</span> <span class="n">riga</span> <span class="ow">in</span> <span class="n">lettore</span><span class="p">:</span>
             <span class="n">riga</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;qualcos&#39;altro&quot;</span><span class="p">)</span>
             <span class="n">scrittore</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">riga</span><span class="p">)</span>           
             
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finito di scrivere&quot;</span><span class="p">,</span> <span class="n">csv_da_scrivere</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finito di scrivere&quot;</span><span class="p">,</span> <span class="n">f_scrittura</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
 
      </div>
