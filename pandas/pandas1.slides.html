@@ -15182,7 +15182,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Pandas-1:-introduzione">Pandas 1: introduzione<a class="anchor-link" href="#Pandas-1:-introduzione">&#182;</a></h1><p><strong>Riferimenti:</strong> <a href="https://it.softpython.org/pandas/pandas1-sol.html">SoftPython - pandas 1</a></p>
+<h1 id="Pandas-1:-introduzione">Pandas 1: introduzione<a class="anchor-link" href="#Pandas-1:-introduzione">&#182;</a></h1><p><strong>Riferimenti:</strong> <a href="https://it.softpython.org/pandas/pandas1-intro-sol.html">SoftPython - pandas 1</a></p>
 <ul>
 <li>visualizza al meglio in <img style="display:inline; width:25px; vertical-align: middle;" src="../_static/img/chrome.png" alttext="Chrome"></li>
 <li>versione stampabile: <a href="?print-pdf">clicca qua</a></li>
@@ -15270,8 +15270,8 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Astropi:-un-dataset...-spaziale!">Astropi: un dataset... spaziale!<a class="anchor-link" href="#Astropi:-un-dataset...-spaziale!">&#182;</a></h2><ul>
-<li>File: <a href="%27Columbus_Ed_astro_pi_datalog.csv%27">Columbus_Ed_astro_pi_datalog.csv</a></li>
-<li>Fonte: <a href="https://projects.raspberrypi.org/en/projects/astro-pi-flight-data-analysis">ESA / Raspberry foundation</a></li>
+<li>File: <a href="%27astropi.csv%27">astropi.csv</a></li>
+<li>Fonte: <a href="https://projects.raspberrypi.org/en/projects/astro-pi-flight-data-analysis">ESA / Raspberry foundation</a> (abbiamo sostituito ROW_ID con time_stamp)</li>
 </ul>
 
 </div>
@@ -15313,7 +15313,7 @@ div.jp-OutputPrompt {
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>   
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>    
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Columbus_Ed_astro_pi_datalog.csv&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;astropi.csv&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15351,10 +15351,10 @@ div.jp-OutputPrompt {
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 110869 entries, 0 to 110868
-Data columns (total 20 columns):
+Data columns (total 19 columns):
  #   Column      Non-Null Count   Dtype  
 ---  ------      --------------   -----  
- 0   ROW_ID      110869 non-null  int64  
+ 0   time_stamp  110869 non-null  object 
  1   temp_cpu    110869 non-null  float64
  2   temp_h      110869 non-null  float64
  3   temp_p      110869 non-null  float64
@@ -15373,9 +15373,8 @@ Data columns (total 20 columns):
  16  gyro_y      110869 non-null  float64
  17  gyro_z      110869 non-null  float64
  18  reset       110869 non-null  int64  
- 19  time_stamp  110869 non-null  object 
-dtypes: float64(17), int64(2), object(1)
-memory usage: 16.9+ MB
+dtypes: float64(17), int64(1), object(1)
+memory usage: 16.1+ MB
 </pre>
 </div>
 </div>
@@ -15441,7 +15440,7 @@ memory usage: 16.9+ MB
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(110869, 20)</pre>
+<pre>(110869, 19)</pre>
 </div>
 
 </div>
@@ -15520,7 +15519,7 @@ memory usage: 16.9+ MB
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ROW_ID</th>
+      <th>time_stamp</th>
       <th>temp_cpu</th>
       <th>temp_h</th>
       <th>temp_p</th>
@@ -15539,13 +15538,12 @@ memory usage: 16.9+ MB
       <th>gyro_y</th>
       <th>gyro_z</th>
       <th>reset</th>
-      <th>time_stamp</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
+      <td>2016-02-16 10:44:40</td>
       <td>31.88</td>
       <td>27.57</td>
       <td>25.01</td>
@@ -15564,11 +15562,10 @@ memory usage: 16.9+ MB
       <td>0.000492</td>
       <td>-0.000750</td>
       <td>20</td>
-      <td>2016-02-16 10:44:40</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
+      <td>2016-02-16 10:44:50</td>
       <td>31.79</td>
       <td>27.53</td>
       <td>25.01</td>
@@ -15587,11 +15584,10 @@ memory usage: 16.9+ MB
       <td>-0.000005</td>
       <td>-0.000235</td>
       <td>0</td>
-      <td>2016-02-16 10:44:50</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
+      <td>2016-02-16 10:45:00</td>
       <td>31.66</td>
       <td>27.53</td>
       <td>25.01</td>
@@ -15610,7 +15606,6 @@ memory usage: 16.9+ MB
       <td>0.000600</td>
       <td>-0.000003</td>
       <td>0</td>
-      <td>2016-02-16 10:45:00</td>
     </tr>
   </tbody>
 </table>
@@ -15670,7 +15665,7 @@ memory usage: 16.9+ MB
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ROW_ID</th>
+      <th>time_stamp</th>
       <th>temp_cpu</th>
       <th>temp_h</th>
       <th>temp_p</th>
@@ -15689,13 +15684,12 @@ memory usage: 16.9+ MB
       <th>gyro_y</th>
       <th>gyro_z</th>
       <th>reset</th>
-      <th>time_stamp</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>110866</th>
-      <td>110867</td>
+      <td>2016-02-29 09:24:41</td>
       <td>31.58</td>
       <td>27.50</td>
       <td>24.83</td>
@@ -15714,11 +15708,10 @@ memory usage: 16.9+ MB
       <td>0.000257</td>
       <td>0.000057</td>
       <td>0</td>
-      <td>2016-02-29 09:24:41</td>
     </tr>
     <tr>
       <th>110867</th>
-      <td>110868</td>
+      <td>2016-02-29 09:24:50</td>
       <td>31.62</td>
       <td>27.50</td>
       <td>24.83</td>
@@ -15737,11 +15730,10 @@ memory usage: 16.9+ MB
       <td>0.000456</td>
       <td>0.000195</td>
       <td>0</td>
-      <td>2016-02-29 09:24:50</td>
     </tr>
     <tr>
       <th>110868</th>
-      <td>110869</td>
+      <td>2016-02-29 09:25:00</td>
       <td>31.57</td>
       <td>27.51</td>
       <td>24.83</td>
@@ -15760,7 +15752,6 @@ memory usage: 16.9+ MB
       <td>0.000076</td>
       <td>0.000030</td>
       <td>0</td>
-      <td>2016-02-29 09:25:00</td>
     </tr>
   </tbody>
 </table>
@@ -15831,7 +15822,6 @@ memory usage: 16.9+ MB
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ROW_ID</th>
       <th>temp_cpu</th>
       <th>temp_h</th>
       <th>temp_p</th>
@@ -15862,7 +15852,6 @@ memory usage: 16.9+ MB
       <td>110869.000000</td>
       <td>110869.000000</td>
       <td>110869.000000</td>
-      <td>110869.000000</td>
       <td>110869.00000</td>
       <td>110869.000000</td>
       <td>110869.000000</td>
@@ -15877,7 +15866,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>mean</th>
-      <td>55435.000000</td>
       <td>32.236259</td>
       <td>28.101773</td>
       <td>25.543272</td>
@@ -15899,7 +15887,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>std</th>
-      <td>32005.267835</td>
       <td>0.360289</td>
       <td>0.369256</td>
       <td>0.380877</td>
@@ -15921,7 +15908,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>min</th>
-      <td>1.000000</td>
       <td>31.410000</td>
       <td>27.200000</td>
       <td>24.530000</td>
@@ -15943,7 +15929,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>25%</th>
-      <td>27718.000000</td>
       <td>31.960000</td>
       <td>27.840000</td>
       <td>25.260000</td>
@@ -15965,7 +15950,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>50%</th>
-      <td>55435.000000</td>
       <td>32.280000</td>
       <td>28.110000</td>
       <td>25.570000</td>
@@ -15987,7 +15971,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>75%</th>
-      <td>83152.000000</td>
       <td>32.480000</td>
       <td>28.360000</td>
       <td>25.790000</td>
@@ -16009,7 +15992,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>max</th>
-      <td>110869.000000</td>
       <td>33.700000</td>
       <td>29.280000</td>
       <td>26.810000</td>
@@ -16110,7 +16092,6 @@ memory usage: 16.9+ MB
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ROW_ID</th>
       <th>temp_cpu</th>
       <th>temp_h</th>
       <th>temp_p</th>
@@ -16133,30 +16114,7 @@ memory usage: 16.9+ MB
   </thead>
   <tbody>
     <tr>
-      <th>ROW_ID</th>
-      <td>1.000000</td>
-      <td>0.361391</td>
-      <td>0.435289</td>
-      <td>0.339916</td>
-      <td>-0.110241</td>
-      <td>0.243337</td>
-      <td>-0.007741</td>
-      <td>-0.390159</td>
-      <td>-0.034877</td>
-      <td>-0.035966</td>
-      <td>-0.025818</td>
-      <td>0.108138</td>
-      <td>-0.132291</td>
-      <td>-0.918587</td>
-      <td>-0.080899</td>
-      <td>-0.001906</td>
-      <td>-0.004913</td>
-      <td>-0.000211</td>
-      <td>-0.005202</td>
-    </tr>
-    <tr>
       <th>temp_cpu</th>
-      <td>0.361391</td>
       <td>1.000000</td>
       <td>0.986872</td>
       <td>0.991672</td>
@@ -16178,7 +16136,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>temp_h</th>
-      <td>0.435289</td>
       <td>0.986872</td>
       <td>1.000000</td>
       <td>0.993260</td>
@@ -16200,7 +16157,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>temp_p</th>
-      <td>0.339916</td>
       <td>0.991672</td>
       <td>0.993260</td>
       <td>1.000000</td>
@@ -16222,7 +16178,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>humidity</th>
-      <td>-0.110241</td>
       <td>-0.297081</td>
       <td>-0.281422</td>
       <td>-0.288373</td>
@@ -16244,7 +16199,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>pressure</th>
-      <td>0.243337</td>
       <td>0.038065</td>
       <td>0.070882</td>
       <td>0.035496</td>
@@ -16266,7 +16220,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>pitch</th>
-      <td>-0.007741</td>
       <td>0.008076</td>
       <td>0.005145</td>
       <td>0.006750</td>
@@ -16288,7 +16241,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>roll</th>
-      <td>-0.390159</td>
       <td>-0.171644</td>
       <td>-0.199628</td>
       <td>-0.163685</td>
@@ -16310,7 +16262,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>yaw</th>
-      <td>-0.034877</td>
       <td>-0.117972</td>
       <td>-0.117870</td>
       <td>-0.118463</td>
@@ -16332,7 +16283,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>mag_x</th>
-      <td>-0.035966</td>
       <td>0.005145</td>
       <td>0.000428</td>
       <td>0.004338</td>
@@ -16354,7 +16304,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>mag_y</th>
-      <td>-0.025818</td>
       <td>-0.285192</td>
       <td>-0.276276</td>
       <td>-0.283427</td>
@@ -16376,7 +16325,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>mag_z</th>
-      <td>0.108138</td>
       <td>-0.120838</td>
       <td>-0.098864</td>
       <td>-0.114407</td>
@@ -16398,7 +16346,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>accel_x</th>
-      <td>-0.132291</td>
       <td>-0.023582</td>
       <td>-0.032188</td>
       <td>-0.018047</td>
@@ -16420,7 +16367,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>accel_y</th>
-      <td>-0.918587</td>
       <td>-0.446358</td>
       <td>-0.510126</td>
       <td>-0.428884</td>
@@ -16442,7 +16388,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>accel_z</th>
-      <td>-0.080899</td>
       <td>-0.029155</td>
       <td>-0.043213</td>
       <td>-0.036505</td>
@@ -16464,7 +16409,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>gyro_x</th>
-      <td>-0.001906</td>
       <td>0.002511</td>
       <td>0.001771</td>
       <td>0.001829</td>
@@ -16486,7 +16430,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>gyro_y</th>
-      <td>-0.004913</td>
       <td>0.005947</td>
       <td>0.005020</td>
       <td>0.006127</td>
@@ -16508,7 +16451,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>gyro_z</th>
-      <td>-0.000211</td>
       <td>-0.001250</td>
       <td>-0.001423</td>
       <td>-0.001623</td>
@@ -16530,7 +16472,6 @@ memory usage: 16.9+ MB
     </tr>
     <tr>
       <th>reset</th>
-      <td>-0.005202</td>
       <td>-0.002970</td>
       <td>-0.004325</td>
       <td>-0.004205</td>
@@ -16602,9 +16543,9 @@ memory usage: 16.9+ MB
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Index([&#39;ROW_ID&#39;, &#39;temp_cpu&#39;, &#39;temp_h&#39;, &#39;temp_p&#39;, &#39;humidity&#39;, &#39;pressure&#39;,
+<pre>Index([&#39;time_stamp&#39;, &#39;temp_cpu&#39;, &#39;temp_h&#39;, &#39;temp_p&#39;, &#39;humidity&#39;, &#39;pressure&#39;,
        &#39;pitch&#39;, &#39;roll&#39;, &#39;yaw&#39;, &#39;mag_x&#39;, &#39;mag_y&#39;, &#39;mag_z&#39;, &#39;accel_x&#39;, &#39;accel_y&#39;,
-       &#39;accel_z&#39;, &#39;gyro_x&#39;, &#39;gyro_y&#39;, &#39;gyro_z&#39;, &#39;reset&#39;, &#39;time_stamp&#39;],
+       &#39;accel_z&#39;, &#39;gyro_x&#39;, &#39;gyro_y&#39;, &#39;gyro_z&#39;, &#39;reset&#39;],
       dtype=&#39;object&#39;)</pre>
 </div>
 
@@ -16771,9 +16712,14 @@ Name: humidity, Length: 110869, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Colonna:-esplora">Colonna: esplora<a class="anchor-link" href="#Colonna:-esplora">&#182;</a></h3><p>Come possiamo sapere qual'è il tipo di una colonna?</p>
-<p>prova a iterare</p>
-<p>prova ad accedere ad una cella specifica</p>
+<h3 id="Una-colonna:-esploriamo!">Una colonna: esploriamo!<a class="anchor-link" href="#Una-colonna:-esploriamo!">&#182;</a></h3><ul>
+<li><p>Come possiamo sapere qual'è il tipo di una colonna?</p>
+</li>
+<li><p>Prova a iterare</p>
+</li>
+<li><p>Prova ad accedere ad una cella specifica</p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -16954,7 +16900,7 @@ class="
 </div>
 
 </div></section></section><section ><section >
-<div id="cell-id=6f7c5348" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=dfea2f14" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16965,7 +16911,7 @@ class="
 </div>
 </div>
 </div>
-<div id="cell-id=c0ea432d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=46ff5d7b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17019,7 +16965,7 @@ class="
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>ROW_ID                          7
+<pre>time_stamp    2016-02-16 10:45:41
 temp_cpu                    31.68
 temp_h                      27.53
 temp_p                      25.01
@@ -17038,7 +16984,6 @@ gyro_x                  -0.000111
 gyro_y                    0.00032
 gyro_z                   0.000222
 reset                           0
-time_stamp    2016-02-16 10:45:41
 Name: 6, dtype: object</pre>
 </div>
 
@@ -17049,7 +16994,7 @@ Name: 6, dtype: object</pre>
 </div>
 
 </div>
-<div id="cell-id=6cb2c14c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=73445f93" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17191,7 +17136,7 @@ class="
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ROW_ID</th>
+      <th>time_stamp</th>
       <th>temp_cpu</th>
       <th>temp_h</th>
       <th>temp_p</th>
@@ -17210,13 +17155,12 @@ class="
       <th>gyro_y</th>
       <th>gyro_z</th>
       <th>reset</th>
-      <th>time_stamp</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>12500</th>
-      <td>12501</td>
+      <td>2016-02-17 21:44:31</td>
       <td>31.87</td>
       <td>27.7</td>
       <td>25.15</td>
@@ -17235,11 +17179,10 @@ class="
       <td>-0.000257</td>
       <td>0.000121</td>
       <td>0</td>
-      <td>2016-02-17 21:44:31</td>
     </tr>
     <tr>
       <th>12501</th>
-      <td>12502</td>
+      <td>2016-02-17 21:44:40</td>
       <td>31.84</td>
       <td>27.7</td>
       <td>25.16</td>
@@ -17258,11 +17201,10 @@ class="
       <td>0.000497</td>
       <td>-0.000010</td>
       <td>0</td>
-      <td>2016-02-17 21:44:40</td>
     </tr>
     <tr>
       <th>12502</th>
-      <td>12503</td>
+      <td>2016-02-17 21:44:51</td>
       <td>31.83</td>
       <td>27.7</td>
       <td>25.15</td>
@@ -17281,7 +17223,6 @@ class="
       <td>0.000081</td>
       <td>0.000024</td>
       <td>0</td>
-      <td>2016-02-17 21:44:51</td>
     </tr>
   </tbody>
 </table>
@@ -17324,7 +17265,7 @@ class="
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>ROW_ID                      12501
+<pre>time_stamp    2016-02-17 21:44:31
 temp_cpu                    31.87
 temp_h                       27.7
 temp_p                      25.15
@@ -17343,7 +17284,6 @@ gyro_x                  -0.000135
 gyro_y                  -0.000257
 gyro_z                   0.000121
 reset                           0
-time_stamp    2016-02-17 21:44:31
 Name: 12500, dtype: object</pre>
 </div>
 
@@ -17417,7 +17357,7 @@ Name: 12500, dtype: object</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ROW_ID</th>
+      <th>time_stamp</th>
       <th>temp_cpu</th>
       <th>temp_h</th>
       <th>temp_p</th>
@@ -17436,13 +17376,12 @@ Name: 12500, dtype: object</pre>
       <th>gyro_y</th>
       <th>gyro_z</th>
       <th>reset</th>
-      <th>time_stamp</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>12500</th>
-      <td>12501</td>
+      <td>2016-02-17 21:44:31</td>
       <td>31.87</td>
       <td>27.7</td>
       <td>25.15</td>
@@ -17461,11 +17400,10 @@ Name: 12500, dtype: object</pre>
       <td>-0.000257</td>
       <td>0.000121</td>
       <td>0</td>
-      <td>2016-02-17 21:44:31</td>
     </tr>
     <tr>
       <th>12501</th>
-      <td>12502</td>
+      <td>2016-02-17 21:44:40</td>
       <td>31.84</td>
       <td>27.7</td>
       <td>25.16</td>
@@ -17484,11 +17422,10 @@ Name: 12500, dtype: object</pre>
       <td>0.000497</td>
       <td>-0.000010</td>
       <td>0</td>
-      <td>2016-02-17 21:44:40</td>
     </tr>
     <tr>
       <th>12502</th>
-      <td>12503</td>
+      <td>2016-02-17 21:44:51</td>
       <td>31.83</td>
       <td>27.7</td>
       <td>25.15</td>
@@ -17507,7 +17444,6 @@ Name: 12500, dtype: object</pre>
       <td>0.000081</td>
       <td>0.000024</td>
       <td>0</td>
-      <td>2016-02-17 21:44:51</td>
     </tr>
   </tbody>
 </table>
@@ -17521,7 +17457,7 @@ Name: 12500, dtype: object</pre>
 </div>
 
 </div></section><section >
-<div id="cell-id=fbc3799b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=56688755" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17531,7 +17467,7 @@ Name: 12500, dtype: object</pre>
 </div>
 </div>
 </div>
-</div><div id="cell-id=fb95d513" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=1e66877e" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17578,7 +17514,7 @@ Name: 12500, dtype: object</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ROW_ID</th>
+      <th>time_stamp</th>
       <th>temp_cpu</th>
       <th>temp_h</th>
       <th>temp_p</th>
@@ -17597,13 +17533,12 @@ Name: 12500, dtype: object</pre>
       <th>gyro_y</th>
       <th>gyro_z</th>
       <th>reset</th>
-      <th>time_stamp</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
+      <td>2016-02-16 10:44:40</td>
       <td>31.88</td>
       <td>27.57</td>
       <td>25.01</td>
@@ -17622,11 +17557,10 @@ Name: 12500, dtype: object</pre>
       <td>0.000492</td>
       <td>-0.000750</td>
       <td>20</td>
-      <td>2016-02-16 10:44:40</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
+      <td>2016-02-16 10:44:50</td>
       <td>31.79</td>
       <td>27.53</td>
       <td>25.01</td>
@@ -17645,11 +17579,10 @@ Name: 12500, dtype: object</pre>
       <td>-0.000005</td>
       <td>-0.000235</td>
       <td>0</td>
-      <td>2016-02-16 10:44:50</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
+      <td>2016-02-16 10:45:00</td>
       <td>31.66</td>
       <td>27.53</td>
       <td>25.01</td>
@@ -17668,11 +17601,10 @@ Name: 12500, dtype: object</pre>
       <td>0.000600</td>
       <td>-0.000003</td>
       <td>0</td>
-      <td>2016-02-16 10:45:00</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
+      <td>2016-02-16 10:45:10</td>
       <td>31.69</td>
       <td>27.52</td>
       <td>25.01</td>
@@ -17691,11 +17623,10 @@ Name: 12500, dtype: object</pre>
       <td>0.000577</td>
       <td>-0.000102</td>
       <td>0</td>
-      <td>2016-02-16 10:45:10</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
+      <td>2016-02-16 10:45:20</td>
       <td>31.66</td>
       <td>27.54</td>
       <td>25.01</td>
@@ -17714,7 +17645,6 @@ Name: 12500, dtype: object</pre>
       <td>0.000691</td>
       <td>0.000272</td>
       <td>0</td>
-      <td>2016-02-16 10:45:20</td>
     </tr>
   </tbody>
 </table>
@@ -17727,7 +17657,7 @@ Name: 12500, dtype: object</pre>
 
 </div>
 
-</div><div id="cell-id=5afcf069" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=a640cad9" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17735,7 +17665,7 @@ Name: 12500, dtype: object</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">humidity</span> <span class="o">&lt;</span> <span class="mf">45.20</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">humidity</span> <span class="o">&lt;</span> <span class="mf">45.2</span>
 </pre></div>
 
      </div>
@@ -17778,7 +17708,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 </div>
 
 </div></section><section >
-<div id="cell-id=cad00074" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=94117c4e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17788,7 +17718,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 </div>
 </div>
 </div>
-</div><div id="cell-id=d63adf24" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=7a1a0f1f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17835,7 +17765,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ROW_ID</th>
+      <th>time_stamp</th>
       <th>temp_cpu</th>
       <th>temp_h</th>
       <th>temp_p</th>
@@ -17854,13 +17784,12 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <th>gyro_y</th>
       <th>gyro_z</th>
       <th>reset</th>
-      <th>time_stamp</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
+      <td>2016-02-16 10:44:40</td>
       <td>31.88</td>
       <td>27.57</td>
       <td>25.01</td>
@@ -17879,11 +17808,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>0.000492</td>
       <td>-0.000750</td>
       <td>20</td>
-      <td>2016-02-16 10:44:40</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
+      <td>2016-02-16 10:44:50</td>
       <td>31.79</td>
       <td>27.53</td>
       <td>25.01</td>
@@ -17902,11 +17830,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>-0.000005</td>
       <td>-0.000235</td>
       <td>0</td>
-      <td>2016-02-16 10:44:50</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
+      <td>2016-02-16 10:45:00</td>
       <td>31.66</td>
       <td>27.53</td>
       <td>25.01</td>
@@ -17925,11 +17852,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>0.000600</td>
       <td>-0.000003</td>
       <td>0</td>
-      <td>2016-02-16 10:45:00</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
+      <td>2016-02-16 10:45:10</td>
       <td>31.69</td>
       <td>27.52</td>
       <td>25.01</td>
@@ -17948,11 +17874,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>0.000577</td>
       <td>-0.000102</td>
       <td>0</td>
-      <td>2016-02-16 10:45:10</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
+      <td>2016-02-16 10:45:20</td>
       <td>31.66</td>
       <td>27.54</td>
       <td>25.01</td>
@@ -17971,7 +17896,6 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>0.000691</td>
       <td>0.000272</td>
       <td>0</td>
-      <td>2016-02-16 10:45:20</td>
     </tr>
   </tbody>
 </table>
@@ -17984,7 +17908,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 
 </div>
 
-</div><div id="cell-id=8d9e7056" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=4b1c9d1a" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17992,7 +17916,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">humidity</span> <span class="o">&gt;</span> <span class="mf">45.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">humidity</span> <span class="o">&lt;</span> <span class="mf">45.20</span><span class="p">)</span>    <span class="c1"># come numpy!</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">humidity</span> <span class="o">&gt;</span> <span class="mf">45.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">humidity</span> <span class="o">&lt;</span> <span class="mf">45.2</span><span class="p">)</span>    <span class="c1"># come numpy!</span>
 </pre></div>
 
      </div>
@@ -18035,7 +17959,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 </div>
 
 </div></section><section >
-<div id="cell-id=51a7d214" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=c52d7ab3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18045,7 +17969,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 </div>
 </div>
 </div>
-</div><div class="fragment" ><div id="cell-id=7c97c53b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div id="cell-id=1191936f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18053,7 +17977,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">humidity</span> <span class="o">&lt;</span> <span class="mf">45.0</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">humidity</span> <span class="o">&gt;</span> <span class="mf">45.20</span><span class="p">)</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">humidity</span> <span class="o">&lt;</span> <span class="mf">45.0</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">humidity</span> <span class="o">&gt;</span> <span class="mf">45.2</span><span class="p">)</span> 
 </pre></div>
 
      </div>
@@ -18096,7 +18020,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 </div>
 
 </div></div></section><section >
-<div id="cell-id=a697ffb9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=ab522857" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18106,7 +18030,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 </div>
 </div>
 </div>
-</div><div id="cell-id=f1590e5b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=d7ce743b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18114,7 +18038,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span>  <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">humidity</span> <span class="o">&gt;</span> <span class="mf">45.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">humidity</span> <span class="o">&lt;</span> <span class="mf">45.20</span><span class="p">)</span>   <span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span>  <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">humidity</span> <span class="o">&gt;</span> <span class="mf">45.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">humidity</span> <span class="o">&lt;</span> <span class="mf">45.2</span><span class="p">)</span>   <span class="p">]</span>
 </pre></div>
 
      </div>
@@ -18153,7 +18077,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ROW_ID</th>
+      <th>time_stamp</th>
       <th>temp_cpu</th>
       <th>temp_h</th>
       <th>temp_p</th>
@@ -18172,13 +18096,12 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <th>gyro_y</th>
       <th>gyro_z</th>
       <th>reset</th>
-      <th>time_stamp</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>1</th>
-      <td>2</td>
+      <td>2016-02-16 10:44:50</td>
       <td>31.79</td>
       <td>27.53</td>
       <td>25.01</td>
@@ -18197,11 +18120,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>-0.000005</td>
       <td>-0.000235</td>
       <td>0</td>
-      <td>2016-02-16 10:44:50</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
+      <td>2016-02-16 10:45:00</td>
       <td>31.66</td>
       <td>27.53</td>
       <td>25.01</td>
@@ -18220,11 +18142,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>0.000600</td>
       <td>-0.000003</td>
       <td>0</td>
-      <td>2016-02-16 10:45:00</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
+      <td>2016-02-16 10:45:20</td>
       <td>31.66</td>
       <td>27.54</td>
       <td>25.01</td>
@@ -18243,11 +18164,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>0.000691</td>
       <td>0.000272</td>
       <td>0</td>
-      <td>2016-02-16 10:45:20</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>6</td>
+      <td>2016-02-16 10:45:30</td>
       <td>31.69</td>
       <td>27.55</td>
       <td>25.01</td>
@@ -18266,11 +18186,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>0.000494</td>
       <td>-0.000059</td>
       <td>0</td>
-      <td>2016-02-16 10:45:30</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>11</td>
+      <td>2016-02-16 10:46:20</td>
       <td>31.68</td>
       <td>27.53</td>
       <td>25.00</td>
@@ -18289,7 +18208,6 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>0.001194</td>
       <td>0.000106</td>
       <td>0</td>
-      <td>2016-02-16 10:46:20</td>
     </tr>
     <tr>
       <th>...</th>
@@ -18312,11 +18230,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>108001</th>
-      <td>108002</td>
+      <td>2016-02-29 01:23:30</td>
       <td>32.32</td>
       <td>28.20</td>
       <td>25.57</td>
@@ -18335,11 +18252,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>0.000447</td>
       <td>0.000149</td>
       <td>0</td>
-      <td>2016-02-29 01:23:30</td>
     </tr>
     <tr>
       <th>108003</th>
-      <td>108004</td>
+      <td>2016-02-29 01:23:50</td>
       <td>32.28</td>
       <td>28.18</td>
       <td>25.57</td>
@@ -18358,11 +18274,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>-0.000084</td>
       <td>-0.000039</td>
       <td>0</td>
-      <td>2016-02-29 01:23:50</td>
     </tr>
     <tr>
       <th>108004</th>
-      <td>108005</td>
+      <td>2016-02-29 01:24:00</td>
       <td>32.30</td>
       <td>28.18</td>
       <td>25.57</td>
@@ -18381,11 +18296,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>-0.000417</td>
       <td>-0.000008</td>
       <td>0</td>
-      <td>2016-02-29 01:24:00</td>
     </tr>
     <tr>
       <th>108006</th>
-      <td>108007</td>
+      <td>2016-02-29 01:24:20</td>
       <td>32.29</td>
       <td>28.19</td>
       <td>25.57</td>
@@ -18404,11 +18318,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>-0.000443</td>
       <td>-0.000032</td>
       <td>0</td>
-      <td>2016-02-29 01:24:20</td>
     </tr>
     <tr>
       <th>108012</th>
-      <td>108013</td>
+      <td>2016-02-29 01:25:21</td>
       <td>32.27</td>
       <td>28.19</td>
       <td>25.57</td>
@@ -18427,11 +18340,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>-0.000491</td>
       <td>0.000309</td>
       <td>0</td>
-      <td>2016-02-29 01:25:21</td>
     </tr>
   </tbody>
 </table>
-<p>7275 rows × 20 columns</p>
+<p>7275 rows × 19 columns</p>
 </div>
 </div>
 
@@ -18442,7 +18354,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 </div>
 
 </div></section><section >
-<div id="cell-id=928a561f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=161f7216" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18452,7 +18364,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 </div>
 </div>
 </div>
-</div><div id="cell-id=b919cd39" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=5501b8a1" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18499,7 +18411,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ROW_ID</th>
+      <th>time_stamp</th>
       <th>temp_cpu</th>
       <th>temp_h</th>
       <th>temp_p</th>
@@ -18518,13 +18430,12 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <th>gyro_y</th>
       <th>gyro_z</th>
       <th>reset</th>
-      <th>time_stamp</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>77602</th>
-      <td>77603</td>
+      <td>2016-02-25 12:13:20</td>
       <td>32.44</td>
       <td>28.31</td>
       <td>25.74</td>
@@ -18543,7 +18454,6 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>-0.000179</td>
       <td>-0.000298</td>
       <td>0</td>
-      <td>2016-02-25 12:13:20</td>
     </tr>
   </tbody>
 </table>
@@ -18556,8 +18466,8 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 
 </div>
 
-</div></section></section><section ><section >
-<div id="cell-id=dcd52036" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div></section><section >
+<div id="cell-id=dac8fd75" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18568,7 +18478,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 </div>
 </div>
 </div>
-</div><div id="cell-id=a7a998a8" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=1865fc71" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18615,7 +18525,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ROW_ID</th>
+      <th>time_stamp</th>
       <th>temp_cpu</th>
       <th>temp_h</th>
       <th>temp_p</th>
@@ -18634,13 +18544,12 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <th>gyro_y</th>
       <th>gyro_z</th>
       <th>reset</th>
-      <th>time_stamp</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>77602</th>
-      <td>77603</td>
+      <td>2016-02-25 12:13:20</td>
       <td>32.44</td>
       <td>28.31</td>
       <td>25.74</td>
@@ -18659,11 +18568,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>-0.000179</td>
       <td>-0.000298</td>
       <td>0</td>
-      <td>2016-02-25 12:13:20</td>
     </tr>
     <tr>
       <th>77601</th>
-      <td>77602</td>
+      <td>2016-02-25 12:13:10</td>
       <td>32.45</td>
       <td>28.30</td>
       <td>25.74</td>
@@ -18682,11 +18590,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>0.000459</td>
       <td>-0.000298</td>
       <td>0</td>
-      <td>2016-02-25 12:13:10</td>
     </tr>
     <tr>
       <th>77603</th>
-      <td>77604</td>
+      <td>2016-02-25 12:13:30</td>
       <td>32.44</td>
       <td>28.30</td>
       <td>25.74</td>
@@ -18705,11 +18612,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>0.000473</td>
       <td>-0.000029</td>
       <td>0</td>
-      <td>2016-02-25 12:13:30</td>
     </tr>
     <tr>
       <th>77604</th>
-      <td>77605</td>
+      <td>2016-02-25 12:13:40</td>
       <td>32.43</td>
       <td>28.30</td>
       <td>25.74</td>
@@ -18728,11 +18634,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>0.000089</td>
       <td>-0.000002</td>
       <td>0</td>
-      <td>2016-02-25 12:13:40</td>
     </tr>
     <tr>
       <th>77608</th>
-      <td>77609</td>
+      <td>2016-02-25 12:14:20</td>
       <td>32.42</td>
       <td>28.29</td>
       <td>25.74</td>
@@ -18751,7 +18656,6 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>-0.000059</td>
       <td>-0.000187</td>
       <td>0</td>
-      <td>2016-02-25 12:14:20</td>
     </tr>
     <tr>
       <th>...</th>
@@ -18774,11 +18678,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>441</th>
-      <td>442</td>
+      <td>2016-02-16 11:58:41</td>
       <td>31.71</td>
       <td>27.49</td>
       <td>24.99</td>
@@ -18797,11 +18700,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>0.000111</td>
       <td>0.000098</td>
       <td>0</td>
-      <td>2016-02-16 11:58:41</td>
     </tr>
     <tr>
       <th>442</th>
-      <td>443</td>
+      <td>2016-02-16 11:58:50</td>
       <td>31.68</td>
       <td>27.48</td>
       <td>24.98</td>
@@ -18820,11 +18722,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>0.000260</td>
       <td>0.000249</td>
       <td>0</td>
-      <td>2016-02-16 11:58:50</td>
     </tr>
     <tr>
       <th>432</th>
-      <td>433</td>
+      <td>2016-02-16 11:57:11</td>
       <td>31.67</td>
       <td>27.50</td>
       <td>24.99</td>
@@ -18843,11 +18744,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>0.000869</td>
       <td>-0.000011</td>
       <td>0</td>
-      <td>2016-02-16 11:57:11</td>
     </tr>
     <tr>
       <th>440</th>
-      <td>441</td>
+      <td>2016-02-16 11:58:30</td>
       <td>31.68</td>
       <td>27.50</td>
       <td>24.99</td>
@@ -18866,11 +18766,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>0.000080</td>
       <td>-0.000182</td>
       <td>0</td>
-      <td>2016-02-16 11:58:30</td>
     </tr>
     <tr>
       <th>444</th>
-      <td>445</td>
+      <td>2016-02-16 11:59:11</td>
       <td>31.70</td>
       <td>27.49</td>
       <td>24.98</td>
@@ -18889,11 +18788,10 @@ Name: humidity, Length: 110869, dtype: bool</pre>
       <td>0.000303</td>
       <td>0.000104</td>
       <td>0</td>
-      <td>2016-02-16 11:59:11</td>
     </tr>
   </tbody>
 </table>
-<p>110869 rows × 20 columns</p>
+<p>110869 rows × 19 columns</p>
 </div>
 </div>
 
@@ -18904,7 +18802,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 </div>
 
 </div></section><section >
-<div id="cell-id=2033fd0d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=632c387d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18924,7 +18822,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=f0ad885a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=23c2a512" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18935,7 +18833,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 </div>
 </div>
 </div>
-<div id="cell-id=6c81bbe4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=1225afe5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18948,7 +18846,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 </div>
 </div>
 </div><div class="fragment" >
-<div id="cell-id=c3117ba4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=7ccf00a4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18959,7 +18857,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 </div>
 </div>
 </div>
-</div><div id="cell-id=d6500125" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=31b971c3" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18989,7 +18887,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;pandas.core.strings.accessor.StringMethods at 0x7fc23edfa7d0&gt;</pre>
+<pre>&lt;pandas.core.strings.accessor.StringMethods at 0x7f817e58cfd0&gt;</pre>
 </div>
 
 </div>
@@ -18999,7 +18897,7 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 </div>
 
 </div></div></section><section >
-<div id="cell-id=38a28de3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=9c8f5ee9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19010,18 +18908,18 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 </div>
 </div>
 </div><div class="fragment" >
-<div id="cell-id=666c8959" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=9a2235e0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Esempio: filtriamo gli ultimi giorni di febbraio</p>
+<p>Esempio: Come filtriare gli ultimi giorni di febbraio?</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=9dc48e9c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=b1e12a38" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19060,7 +18958,59 @@ Name: humidity, Length: 110869, dtype: bool</pre>
 
 </div>
 
-</div></div><div class="fragment" ><div id="cell-id=7ae30022" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></div><div class="fragment" >
+<div id="cell-id=5bfdf91e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span> <span class="s1">&#39;2016-02-2&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;time_stamp&#39;</span><span class="p">]</span> <span class="p">]</span>   <span class="c1"># BOOM!</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=c024a4bb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span>                                  <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">~/.</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">indexes</span><span class="o">/</span><span class="n">base</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="n">get_loc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">)</span>
+   <span class="mi">3360</span>             <span class="k">try</span><span class="p">:</span>
+<span class="o">-&gt;</span> <span class="mi">3361</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
+   <span class="mi">3362</span>             <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+
+<span class="o">~/.</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">_libs</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">pyx</span> <span class="ow">in</span> <span class="n">pandas</span><span class="o">.</span><span class="n">_libs</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">IndexEngine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">()</span>
+
+<span class="o">~/.</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">_libs</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">pyx</span> <span class="ow">in</span> <span class="n">pandas</span><span class="o">.</span><span class="n">_libs</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">IndexEngine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">()</span>
+
+<span class="n">pandas</span><span class="o">/</span><span class="n">_libs</span><span class="o">/</span><span class="n">hashtable_class_helper</span><span class="o">.</span><span class="n">pxi</span> <span class="ow">in</span> <span class="n">pandas</span><span class="o">.</span><span class="n">_libs</span><span class="o">.</span><span class="n">hashtable</span><span class="o">.</span><span class="n">PyObjectHashTable</span><span class="o">.</span><span class="n">get_item</span><span class="p">()</span>
+
+<span class="n">pandas</span><span class="o">/</span><span class="n">_libs</span><span class="o">/</span><span class="n">hashtable_class_helper</span><span class="o">.</span><span class="n">pxi</span> <span class="ow">in</span> <span class="n">pandas</span><span class="o">.</span><span class="n">_libs</span><span class="o">.</span><span class="n">hashtable</span><span class="o">.</span><span class="n">PyObjectHashTable</span><span class="o">.</span><span class="n">get_item</span><span class="p">()</span>
+
+<span class="ne">KeyError</span><span class="p">:</span> <span class="kc">False</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></div></section><section >
+<div id="cell-id=9e45c433" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Come-filtriare-gli-ultimi-giorni-di-febbraio?">Come filtriare gli ultimi giorni di febbraio?<a class="anchor-link" href="#Come-filtriare-gli-ultimi-giorni-di-febbraio?">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div id="cell-id=a5e11702" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19110,19 +19060,19 @@ Name: time_stamp, Length: 110869, dtype: bool</pre>
 
 </div>
 
-</div></div></section><section >
-<div id="cell-id=5808df98" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div></section><section >
+<div id="cell-id=986d55fd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="verifichiamo-contains">verifichiamo <code>contains</code><a class="anchor-link" href="#verifichiamo-contains">&#182;</a></h3><p>Filtra ultimi giorni di febbraio:</p>
+<h3 id="Applichiamo-il-filtro-con-contains">Applichiamo il filtro con <code>contains</code><a class="anchor-link" href="#Applichiamo-il-filtro-con-contains">&#182;</a></h3><p>Filtra ultimi giorni di febbraio:</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=2faf2f2b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=9ab0b336" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19169,7 +19119,7 @@ Name: time_stamp, Length: 110869, dtype: bool</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ROW_ID</th>
+      <th>time_stamp</th>
       <th>temp_cpu</th>
       <th>temp_h</th>
       <th>temp_p</th>
@@ -19188,13 +19138,12 @@ Name: time_stamp, Length: 110869, dtype: bool</pre>
       <th>gyro_y</th>
       <th>gyro_z</th>
       <th>reset</th>
-      <th>time_stamp</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>30442</th>
-      <td>30443</td>
+      <td>2016-02-20 00:00:00</td>
       <td>32.30</td>
       <td>28.12</td>
       <td>25.59</td>
@@ -19213,11 +19162,10 @@ Name: time_stamp, Length: 110869, dtype: bool</pre>
       <td>0.000275</td>
       <td>0.000157</td>
       <td>0</td>
-      <td>2016-02-20 00:00:00</td>
     </tr>
     <tr>
       <th>30443</th>
-      <td>30444</td>
+      <td>2016-02-20 00:00:10</td>
       <td>32.25</td>
       <td>28.13</td>
       <td>25.59</td>
@@ -19236,11 +19184,10 @@ Name: time_stamp, Length: 110869, dtype: bool</pre>
       <td>0.001011</td>
       <td>0.000149</td>
       <td>0</td>
-      <td>2016-02-20 00:00:10</td>
     </tr>
     <tr>
       <th>30444</th>
-      <td>30445</td>
+      <td>2016-02-20 00:00:41</td>
       <td>33.07</td>
       <td>28.13</td>
       <td>25.59</td>
@@ -19259,11 +19206,10 @@ Name: time_stamp, Length: 110869, dtype: bool</pre>
       <td>0.000343</td>
       <td>-0.000025</td>
       <td>0</td>
-      <td>2016-02-20 00:00:41</td>
     </tr>
     <tr>
       <th>30445</th>
-      <td>30446</td>
+      <td>2016-02-20 00:00:50</td>
       <td>32.63</td>
       <td>28.10</td>
       <td>25.60</td>
@@ -19282,11 +19228,10 @@ Name: time_stamp, Length: 110869, dtype: bool</pre>
       <td>0.000349</td>
       <td>-0.000190</td>
       <td>0</td>
-      <td>2016-02-20 00:00:50</td>
     </tr>
     <tr>
       <th>30446</th>
-      <td>30447</td>
+      <td>2016-02-20 00:01:01</td>
       <td>32.55</td>
       <td>28.11</td>
       <td>25.60</td>
@@ -19305,7 +19250,6 @@ Name: time_stamp, Length: 110869, dtype: bool</pre>
       <td>-0.000381</td>
       <td>-0.000243</td>
       <td>0</td>
-      <td>2016-02-20 00:01:01</td>
     </tr>
   </tbody>
 </table>
@@ -19318,8 +19262,8 @@ Name: time_stamp, Length: 110869, dtype: bool</pre>
 
 </div>
 
-</div></section></section><section ><section >
-<div id="cell-id=bb5e6e8d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div></section><section >
+<div id="cell-id=99b8aae7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19330,7 +19274,7 @@ Name: time_stamp, Length: 110869, dtype: bool</pre>
 </div>
 </div>
 </div>
-</div><div id="cell-id=627e7f89" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=818f831c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19375,7 +19319,7 @@ Name: time_stamp, dtype: object</pre>
 </div>
 
 </div><div class="fragment" >
-<div id="cell-id=5543309b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=209ce6ab" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19386,7 +19330,7 @@ Name: time_stamp, dtype: object</pre>
 </div>
 </div>
 </div>
-</div><div id="cell-id=a37592e7" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=63da4886" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19437,21 +19381,21 @@ Name: time_stamp, Length: 110869, dtype: object</pre>
 </div>
 
 </div></div></section></section><section ><section >
-<div id="cell-id=7c12f251" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d3203fae" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Operazioni-su-colonne">Operazioni su colonne<a class="anchor-link" href="#Operazioni-su-colonne">&#182;</a></h2><p>Selezionare</p>
-<p>Aggiungere / scrivere</p>
-<p>Trasformare</p>
+<h2 id="Operazioni-su-colonne">Operazioni su colonne<a class="anchor-link" href="#Operazioni-su-colonne">&#182;</a></h2><p><strong>Selezionare</strong></p>
+<p><strong>Aggiungere / scrivere</strong></p>
+<p><strong>Trasformare</strong></p>
 
 </div>
 </div>
 </div>
 </div></section><section >
-<div id="cell-id=008ae7d1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=e5d70e2a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19461,7 +19405,7 @@ Name: time_stamp, Length: 110869, dtype: object</pre>
 </div>
 </div>
 </div>
-</div><div id="cell-id=79ac59ad" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=6802e60b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19593,18 +19537,19 @@ Name: time_stamp, Length: 110869, dtype: object</pre>
 </div>
 
 </div></section><section >
-<div id="cell-id=3774f87a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=a34e045f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Aggiungere-colonne">Aggiungere colonne<a class="anchor-link" href="#Aggiungere-colonne">&#182;</a></h3><p>Pandas supporta operazioni algebriche</p>
+<h3 id="Aggiungere-colonne">Aggiungere colonne<a class="anchor-link" href="#Aggiungere-colonne">&#182;</a></h3><p>Pandas supporta operazioni algebriche.</p>
+<p>Creaiamo NUOVA colonna in fondo:</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=1a935e01" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=64f9e3b5" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19612,7 +19557,7 @@ Name: time_stamp, Length: 110869, dtype: object</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;mag_tot&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;mag_x&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;mag_y&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;mag_z&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;mag_tot&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;mag_x&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;mag_y&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;mag_z&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> 
 </pre></div>
 
      </div>
@@ -19620,7 +19565,19 @@ Name: time_stamp, Length: 110869, dtype: object</pre>
 </div>
 </div>
 
-</div><div id="cell-id=9db93390" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div id="cell-id=6373cc3e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Selezioniamo per vedere il risultato:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=efe1e6e2" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19628,7 +19585,7 @@ Name: time_stamp, Length: 110869, dtype: object</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c1"># guarda in fondo</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()[[</span><span class="s1">&#39;time_stamp&#39;</span><span class="p">,</span> <span class="s1">&#39;mag_x&#39;</span><span class="p">,</span> <span class="s1">&#39;mag_y&#39;</span><span class="p">,</span> <span class="s1">&#39;mag_z&#39;</span><span class="p">,</span> <span class="s1">&#39;mag_tot&#39;</span><span class="p">]]</span> 
 </pre></div>
 
      </div>
@@ -19667,153 +19624,56 @@ Name: time_stamp, Length: 110869, dtype: object</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ROW_ID</th>
-      <th>temp_cpu</th>
-      <th>temp_h</th>
-      <th>temp_p</th>
-      <th>humidity</th>
-      <th>pressure</th>
-      <th>pitch</th>
-      <th>roll</th>
-      <th>yaw</th>
-      <th>mag_x</th>
-      <th>...</th>
-      <th>mag_z</th>
-      <th>accel_x</th>
-      <th>accel_y</th>
-      <th>accel_z</th>
-      <th>gyro_x</th>
-      <th>gyro_y</th>
-      <th>gyro_z</th>
-      <th>reset</th>
       <th>time_stamp</th>
+      <th>mag_x</th>
+      <th>mag_y</th>
+      <th>mag_z</th>
       <th>mag_tot</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>31.88</td>
-      <td>27.57</td>
-      <td>25.01</td>
-      <td>44.94</td>
-      <td>1001.68</td>
-      <td>1.49</td>
-      <td>52.25</td>
-      <td>185.21</td>
-      <td>-46.422753</td>
-      <td>...</td>
-      <td>-12.129346</td>
-      <td>-0.000468</td>
-      <td>0.019439</td>
-      <td>0.014569</td>
-      <td>0.000942</td>
-      <td>0.000492</td>
-      <td>-0.000750</td>
-      <td>20</td>
       <td>2016-02-16 10:44:40</td>
+      <td>-46.422753</td>
+      <td>-8.132907</td>
+      <td>-12.129346</td>
       <td>2368.337207</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>31.79</td>
-      <td>27.53</td>
-      <td>25.01</td>
-      <td>45.12</td>
-      <td>1001.72</td>
-      <td>1.03</td>
-      <td>53.73</td>
-      <td>186.72</td>
-      <td>-48.778951</td>
-      <td>...</td>
-      <td>-12.943096</td>
-      <td>-0.000614</td>
-      <td>0.019436</td>
-      <td>0.014577</td>
-      <td>0.000218</td>
-      <td>-0.000005</td>
-      <td>-0.000235</td>
-      <td>0</td>
       <td>2016-02-16 10:44:50</td>
+      <td>-48.778951</td>
+      <td>-8.304243</td>
+      <td>-12.943096</td>
       <td>2615.870247</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
-      <td>31.66</td>
-      <td>27.53</td>
-      <td>25.01</td>
-      <td>45.12</td>
-      <td>1001.72</td>
-      <td>1.24</td>
-      <td>53.57</td>
-      <td>186.21</td>
-      <td>-49.161878</td>
-      <td>...</td>
-      <td>-12.642772</td>
-      <td>-0.000569</td>
-      <td>0.019359</td>
-      <td>0.014357</td>
-      <td>0.000395</td>
-      <td>0.000600</td>
-      <td>-0.000003</td>
-      <td>0</td>
       <td>2016-02-16 10:45:00</td>
+      <td>-49.161878</td>
+      <td>-8.470832</td>
+      <td>-12.642772</td>
       <td>2648.484927</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
-      <td>31.69</td>
-      <td>27.52</td>
-      <td>25.01</td>
-      <td>45.32</td>
-      <td>1001.69</td>
-      <td>1.57</td>
-      <td>53.63</td>
-      <td>186.03</td>
-      <td>-49.341941</td>
-      <td>...</td>
-      <td>-12.615509</td>
-      <td>-0.000575</td>
-      <td>0.019383</td>
-      <td>0.014409</td>
-      <td>0.000308</td>
-      <td>0.000577</td>
-      <td>-0.000102</td>
-      <td>0</td>
       <td>2016-02-16 10:45:10</td>
+      <td>-49.341941</td>
+      <td>-8.457380</td>
+      <td>-12.615509</td>
       <td>2665.305485</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>31.66</td>
-      <td>27.54</td>
-      <td>25.01</td>
-      <td>45.18</td>
-      <td>1001.71</td>
-      <td>0.85</td>
-      <td>53.66</td>
-      <td>186.46</td>
-      <td>-50.056683</td>
-      <td>...</td>
-      <td>-12.678341</td>
-      <td>-0.000548</td>
-      <td>0.019378</td>
-      <td>0.014380</td>
-      <td>0.000321</td>
-      <td>0.000691</td>
-      <td>0.000272</td>
-      <td>0</td>
       <td>2016-02-16 10:45:20</td>
+      <td>-50.056683</td>
+      <td>-8.122609</td>
+      <td>-12.678341</td>
       <td>2732.388620</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 21 columns</p>
 </div>
 </div>
 
@@ -19824,17 +19684,17 @@ Name: time_stamp, Length: 110869, dtype: object</pre>
 </div>
 
 </div></section><section >
-<div id="cell-id=31f974e5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=e6d22cb4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Quando-il-campo-magnetico-era-pi%C3%B9-forte?">Quando il campo magnetico era pi&#249; forte?<a class="anchor-link" href="#Quando-il-campo-magnetico-era-pi%C3%B9-forte?">&#182;</a></h3>
+<h3 id="Quando-il-campo-magnetico-%C3%A8-pi%C3%B9-forte?">Quando il campo magnetico &#232; pi&#249; forte?<a class="anchor-link" href="#Quando-il-campo-magnetico-%C3%A8-pi%C3%B9-forte?">&#182;</a></h3>
 </div>
 </div>
 </div>
-</div><div id="cell-id=91869dbe" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=3885f06b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19878,7 +19738,7 @@ class="
 
 </div>
 
-</div><div class="fragment" ><div id="cell-id=2d8131e9" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div id="cell-id=8fc0fef4" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19919,7 +19779,7 @@ Name: time_stamp, dtype: object</pre>
 </div>
 
 </div></div><div class="fragment" >
-<div id="cell-id=33f500e7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=9390b0ee" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19931,7 +19791,7 @@ Name: time_stamp, dtype: object</pre>
 </div>
 </div>
 </div></div></section><section >
-<div id="cell-id=83d02e99" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=b985a6fb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19944,8 +19804,8 @@ Name: time_stamp, dtype: object</pre>
 </div>
 </div>
 </div>
-</div>
-<div id="cell-id=6df94ad0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div><div class="fragment" >
+<div id="cell-id=ae13062c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19958,8 +19818,8 @@ Name: time_stamp, dtype: object</pre>
 </div>
 </div>
 </div>
-</div></section><section >
-<div id="cell-id=2d91a296" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div></div></section><section >
+<div id="cell-id=7ead0e2d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19969,7 +19829,7 @@ Name: time_stamp, dtype: object</pre>
 </div>
 </div>
 </div>
-</div><div id="cell-id=1e3af1e7" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=0e3b9d3f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19977,7 +19837,7 @@ Name: time_stamp, dtype: object</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">temp_cpu</span> <span class="o">&gt;</span> <span class="mf">31.68</span><span class="p">),</span><span class="s1">&#39;cpu_troppo_calda&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span> <span class="n">df</span><span class="o">.</span><span class="n">temp_cpu</span> <span class="o">&gt;</span> <span class="mf">31.68</span><span class="p">,</span><span class="s1">&#39;cpu_troppo_calda&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 
      </div>
@@ -19985,19 +19845,7 @@ Name: time_stamp, dtype: object</pre>
 </div>
 </div>
 
-</div>
-<div id="cell-id=5b04cde8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>DOMANDA</strong>: cosa ha scritto nelle righe <em>non</em> selezionate?</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=9d269d41" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div id="cell-id=aaf54d3b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -20005,7 +19853,7 @@ Name: time_stamp, dtype: object</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()[[</span><span class="s1">&#39;time_stamp&#39;</span><span class="p">,</span> <span class="s1">&#39;temp_cpu&#39;</span><span class="p">,</span> <span class="s1">&#39;cpu_troppo_calda&#39;</span><span class="p">]]</span>  
 </pre></div>
 
      </div>
@@ -20044,153 +19892,44 @@ Name: time_stamp, dtype: object</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ROW_ID</th>
-      <th>temp_cpu</th>
-      <th>temp_h</th>
-      <th>temp_p</th>
-      <th>humidity</th>
-      <th>pressure</th>
-      <th>pitch</th>
-      <th>roll</th>
-      <th>yaw</th>
-      <th>mag_x</th>
-      <th>...</th>
-      <th>accel_x</th>
-      <th>accel_y</th>
-      <th>accel_z</th>
-      <th>gyro_x</th>
-      <th>gyro_y</th>
-      <th>gyro_z</th>
-      <th>reset</th>
       <th>time_stamp</th>
-      <th>mag_tot</th>
+      <th>temp_cpu</th>
       <th>cpu_troppo_calda</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>31.88</td>
-      <td>27.57</td>
-      <td>25.01</td>
-      <td>44.94</td>
-      <td>1001.68</td>
-      <td>1.49</td>
-      <td>52.25</td>
-      <td>185.21</td>
-      <td>-46.422753</td>
-      <td>...</td>
-      <td>-0.000468</td>
-      <td>0.019439</td>
-      <td>0.014569</td>
-      <td>0.000942</td>
-      <td>0.000492</td>
-      <td>-0.000750</td>
-      <td>20</td>
       <td>2016-02-16 10:44:40</td>
-      <td>2368.337207</td>
+      <td>31.88</td>
       <td>True</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>31.79</td>
-      <td>27.53</td>
-      <td>25.01</td>
-      <td>45.12</td>
-      <td>1001.72</td>
-      <td>1.03</td>
-      <td>53.73</td>
-      <td>186.72</td>
-      <td>-48.778951</td>
-      <td>...</td>
-      <td>-0.000614</td>
-      <td>0.019436</td>
-      <td>0.014577</td>
-      <td>0.000218</td>
-      <td>-0.000005</td>
-      <td>-0.000235</td>
-      <td>0</td>
       <td>2016-02-16 10:44:50</td>
-      <td>2615.870247</td>
+      <td>31.79</td>
       <td>True</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
-      <td>31.66</td>
-      <td>27.53</td>
-      <td>25.01</td>
-      <td>45.12</td>
-      <td>1001.72</td>
-      <td>1.24</td>
-      <td>53.57</td>
-      <td>186.21</td>
-      <td>-49.161878</td>
-      <td>...</td>
-      <td>-0.000569</td>
-      <td>0.019359</td>
-      <td>0.014357</td>
-      <td>0.000395</td>
-      <td>0.000600</td>
-      <td>-0.000003</td>
-      <td>0</td>
       <td>2016-02-16 10:45:00</td>
-      <td>2648.484927</td>
+      <td>31.66</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
-      <td>31.69</td>
-      <td>27.52</td>
-      <td>25.01</td>
-      <td>45.32</td>
-      <td>1001.69</td>
-      <td>1.57</td>
-      <td>53.63</td>
-      <td>186.03</td>
-      <td>-49.341941</td>
-      <td>...</td>
-      <td>-0.000575</td>
-      <td>0.019383</td>
-      <td>0.014409</td>
-      <td>0.000308</td>
-      <td>0.000577</td>
-      <td>-0.000102</td>
-      <td>0</td>
       <td>2016-02-16 10:45:10</td>
-      <td>2665.305485</td>
+      <td>31.69</td>
       <td>True</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>31.66</td>
-      <td>27.54</td>
-      <td>25.01</td>
-      <td>45.18</td>
-      <td>1001.71</td>
-      <td>0.85</td>
-      <td>53.66</td>
-      <td>186.46</td>
-      <td>-50.056683</td>
-      <td>...</td>
-      <td>-0.000548</td>
-      <td>0.019378</td>
-      <td>0.014380</td>
-      <td>0.000321</td>
-      <td>0.000691</td>
-      <td>0.000272</td>
-      <td>0</td>
       <td>2016-02-16 10:45:20</td>
-      <td>2732.388620</td>
+      <td>31.66</td>
       <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 22 columns</p>
 </div>
 </div>
 
@@ -20200,8 +19939,20 @@ Name: time_stamp, dtype: object</pre>
 
 </div>
 
-</div></section><section >
-<div id="cell-id=c11258fb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div id="cell-id=2c049762" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>DOMANDA</strong>: cosa ha scritto nelle righe <em>non</em> selezionate?</p>
+
+</div>
+</div>
+</div>
+</div></div></section><section >
+<div id="cell-id=c14575f2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -20211,7 +19962,7 @@ Name: time_stamp, dtype: object</pre>
 </div>
 </div>
 </div>
-</div><div id="cell-id=f2c424f4" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=caa8ec3a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -20227,7 +19978,7 @@ Name: time_stamp, dtype: object</pre>
 </div>
 </div>
 
-</div><div id="cell-id=cc8a408d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=2320efcb" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -20235,7 +19986,7 @@ Name: time_stamp, dtype: object</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;controllo_pressione&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">pressure</span> <span class="o">&lt;=</span> <span class="n">pressione_media</span><span class="p">,</span> <span class="s1">&#39;sotto&#39;</span><span class="p">,</span> <span class="s1">&#39;sopra&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;controllo_pressione&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">pressure</span> <span class="o">&lt;=</span> <span class="n">pressione_media</span><span class="p">,</span><span class="s1">&#39;sotto&#39;</span><span class="p">,</span><span class="s1">&#39;sopra&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -20243,7 +19994,19 @@ Name: time_stamp, dtype: object</pre>
 </div>
 </div>
 
-</div><div id="cell-id=689eb289" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" >
+<div id="cell-id=fa8db398" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Selezioniamo per vedere righe con variazioni:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=d8c31b8f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -20251,7 +20014,7 @@ Name: time_stamp, dtype: object</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">29739</span><span class="p">:</span><span class="mi">29745</span><span class="p">]</span>  <span class="c1"># selezioniamo righe con variazioni</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">29739</span><span class="p">:</span><span class="mi">29745</span><span class="p">][[</span><span class="s1">&#39;time_stamp&#39;</span><span class="p">,</span> <span class="s1">&#39;pressure&#39;</span><span class="p">,</span> <span class="s1">&#39;controllo_pressione&#39;</span><span class="p">]]</span> 
 </pre></div>
 
      </div>
@@ -20290,177 +20053,50 @@ Name: time_stamp, dtype: object</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ROW_ID</th>
-      <th>temp_cpu</th>
-      <th>temp_h</th>
-      <th>temp_p</th>
-      <th>humidity</th>
-      <th>pressure</th>
-      <th>pitch</th>
-      <th>roll</th>
-      <th>yaw</th>
-      <th>mag_x</th>
-      <th>...</th>
-      <th>accel_y</th>
-      <th>accel_z</th>
-      <th>gyro_x</th>
-      <th>gyro_y</th>
-      <th>gyro_z</th>
-      <th>reset</th>
       <th>time_stamp</th>
-      <th>mag_tot</th>
-      <th>cpu_troppo_calda</th>
+      <th>pressure</th>
       <th>controllo_pressione</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>29739</th>
-      <td>29740</td>
-      <td>32.24</td>
-      <td>28.03</td>
-      <td>25.52</td>
-      <td>44.43</td>
-      <td>1008.10</td>
-      <td>1.42</td>
-      <td>51.98</td>
-      <td>275.80</td>
-      <td>1.910006</td>
-      <td>...</td>
-      <td>0.018701</td>
-      <td>0.014606</td>
-      <td>-0.000093</td>
-      <td>-0.000080</td>
-      <td>0.000018</td>
-      <td>0</td>
       <td>2016-02-19 22:01:30</td>
-      <td>481.830794</td>
-      <td>True</td>
+      <td>1008.10</td>
       <td>sotto</td>
     </tr>
     <tr>
       <th>29740</th>
-      <td>29741</td>
-      <td>32.26</td>
-      <td>28.04</td>
-      <td>25.52</td>
-      <td>44.37</td>
-      <td>1008.11</td>
-      <td>1.47</td>
-      <td>52.08</td>
-      <td>277.11</td>
-      <td>2.413142</td>
-      <td>...</td>
-      <td>0.018719</td>
-      <td>0.014614</td>
-      <td>0.000451</td>
-      <td>0.000524</td>
-      <td>0.000078</td>
-      <td>0</td>
       <td>2016-02-19 22:01:40</td>
-      <td>486.220778</td>
-      <td>True</td>
+      <td>1008.11</td>
       <td>sotto</td>
     </tr>
     <tr>
       <th>29741</th>
-      <td>29742</td>
-      <td>32.22</td>
-      <td>28.04</td>
-      <td>25.52</td>
-      <td>44.49</td>
-      <td>1008.15</td>
-      <td>1.60</td>
-      <td>52.17</td>
-      <td>278.52</td>
-      <td>2.929722</td>
-      <td>...</td>
-      <td>0.018716</td>
-      <td>0.014602</td>
-      <td>0.000670</td>
-      <td>0.000455</td>
-      <td>0.000109</td>
-      <td>0</td>
       <td>2016-02-19 22:01:50</td>
-      <td>480.890508</td>
-      <td>True</td>
+      <td>1008.15</td>
       <td>sopra</td>
     </tr>
     <tr>
       <th>29742</th>
-      <td>29743</td>
-      <td>32.21</td>
-      <td>28.04</td>
-      <td>25.52</td>
-      <td>44.48</td>
-      <td>1008.13</td>
-      <td>1.47</td>
-      <td>52.24</td>
-      <td>279.44</td>
-      <td>3.163792</td>
-      <td>...</td>
-      <td>0.019034</td>
-      <td>0.014692</td>
-      <td>0.000221</td>
-      <td>0.000553</td>
-      <td>0.000138</td>
-      <td>0</td>
       <td>2016-02-19 22:02:01</td>
-      <td>483.919953</td>
-      <td>True</td>
+      <td>1008.13</td>
       <td>sopra</td>
     </tr>
     <tr>
       <th>29743</th>
-      <td>29744</td>
-      <td>32.23</td>
-      <td>28.05</td>
-      <td>25.52</td>
-      <td>44.45</td>
-      <td>1008.11</td>
-      <td>1.88</td>
-      <td>51.81</td>
-      <td>280.36</td>
-      <td>3.486707</td>
-      <td>...</td>
-      <td>0.018786</td>
-      <td>0.014833</td>
-      <td>-0.000020</td>
-      <td>0.000230</td>
-      <td>0.000134</td>
-      <td>0</td>
       <td>2016-02-19 22:02:10</td>
-      <td>476.163984</td>
-      <td>True</td>
+      <td>1008.11</td>
       <td>sotto</td>
     </tr>
     <tr>
       <th>29744</th>
-      <td>29745</td>
-      <td>32.24</td>
-      <td>28.05</td>
-      <td>25.52</td>
-      <td>44.60</td>
-      <td>1008.12</td>
-      <td>1.26</td>
-      <td>51.83</td>
-      <td>281.22</td>
-      <td>3.937303</td>
-      <td>...</td>
-      <td>0.018701</td>
-      <td>0.014571</td>
-      <td>0.000042</td>
-      <td>0.000156</td>
-      <td>0.000071</td>
-      <td>0</td>
       <td>2016-02-19 22:02:21</td>
-      <td>478.775309</td>
-      <td>True</td>
+      <td>1008.12</td>
       <td>sotto</td>
     </tr>
   </tbody>
 </table>
-<p>6 rows × 23 columns</p>
 </div>
 </div>
 
@@ -20470,23 +20106,19 @@ Name: time_stamp, dtype: object</pre>
 
 </div>
 
-</div><div id="cell-id=47bb2333" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></div></section><section >
+<div id="cell-id=a539e2f3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Trasformare-una-colonna---un-problema">Trasformare una colonna - un problema<a class="anchor-link" href="#Trasformare-una-colonna---un-problema">&#182;</a></h3><p>Come convertire tutti i valori della colonna umidità da float a interi?</p>
 
-     </div>
 </div>
 </div>
 </div>
-
-</div><div id="cell-id=f95e8943-stripped" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=414a7a61" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -20494,6 +20126,526 @@ Name: time_stamp, dtype: object</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;humidity&#39;</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>0         44.94
+1         45.12
+2         45.12
+3         45.32
+4         45.18
+          ...  
+110864    42.94
+110865    42.72
+110866    42.83
+110867    42.81
+110868    42.94
+Name: humidity, Length: 110869, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="fragment" >
+<div id="cell-id=6ca7d541" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Intanto, come convertire  UN solo valore?</p>
+
+</div>
+</div>
+</div>
+</div></div><div class="fragment" ><div id="cell-id=91f33b99" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="mf">44.12</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>44</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></div></section><section >
+<div id="cell-id=19a56bad" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Come-trasformare-TUTTA-una-colonna?">Come trasformare TUTTA una colonna?<a class="anchor-link" href="#Come-trasformare-TUTTA-una-colonna?">&#182;</a></h3><p>Usiamo il metodo <code>.transform</code>:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=fce8228d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;humidity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[47]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>0         44
+1         45
+2         45
+3         45
+4         45
+          ..
+110864    42
+110865    42
+110866    42
+110867    42
+110868    42
+Name: humidity, Length: 110869, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="fragment" >
+<div id="cell-id=f12716cd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>NOTA</strong>: a <code>transform</code> passiamo <em>l'oggetto funzione</em> <code>int</code></p>
+<p><strong>DOMANDA</strong>: chi chiama <code>int</code>?</p>
+
+</div>
+</div>
+</div>
+</div></div></section><section >
+<div id="cell-id=03404bf9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Trasformare-una-colonna">Trasformare una colonna<a class="anchor-link" href="#Trasformare-una-colonna">&#182;</a></h2><h3 id="...stessa-minestra">...stessa minestra<a class="anchor-link" href="#...stessa-minestra">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div id="cell-id=2ed631e2" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">mia_f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;humidity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">mia_f</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>0         44
+1         45
+2         45
+3         45
+4         45
+          ..
+110864    42
+110865    42
+110866    42
+110867    42
+110868    42
+Name: humidity, Length: 110869, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=0e34fb26" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Trasformare-una-colonna">Trasformare una colonna<a class="anchor-link" href="#Trasformare-una-colonna">&#182;</a></h3><h3 id="...minestra-alla-lambda">...minestra alla <code>lambda</code><a class="anchor-link" href="#...minestra-alla-lambda">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div id="cell-id=6edf5214" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;humidity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>0         44
+1         45
+2         45
+3         45
+4         45
+          ..
+110864    42
+110865    42
+110866    42
+110867    42
+110868    42
+Name: humidity, Length: 110869, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=73a90293" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Trasformare---%C3%A8-cambiato-qualcosa?">Trasformare - &#232; cambiato qualcosa?<a class="anchor-link" href="#Trasformare---%C3%A8-cambiato-qualcosa?">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div id="cell-id=a064ca0a" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;humidity&#39;</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>0         44.94
+1         45.12
+2         45.12
+3         45.32
+4         45.18
+          ...  
+110864    42.94
+110865    42.72
+110866    42.83
+110867    42.81
+110868    42.94
+Name: humidity, Length: 110869, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=654f3a5a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Trasformare-veramente---riassegnamo!">Trasformare veramente - riassegnamo!<a class="anchor-link" href="#Trasformare-veramente---riassegnamo!">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div id="cell-id=bf2dc1ef" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;humidity_int&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;humidity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=83536858" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span> <span class="p">[</span><span class="s1">&#39;time_stamp&#39;</span><span class="p">,</span> <span class="s1">&#39;humidity_int&#39;</span><span class="p">,</span> <span class="s1">&#39;humidity&#39;</span> <span class="p">]</span>  <span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[52]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time_stamp</th>
+      <th>humidity_int</th>
+      <th>humidity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2016-02-16 10:44:40</td>
+      <td>44</td>
+      <td>44.94</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2016-02-16 10:44:50</td>
+      <td>45</td>
+      <td>45.12</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2016-02-16 10:45:00</td>
+      <td>45</td>
+      <td>45.12</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2016-02-16 10:45:10</td>
+      <td>45</td>
+      <td>45.32</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2016-02-16 10:45:20</td>
+      <td>45</td>
+      <td>45.18</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>110864</th>
+      <td>2016-02-29 09:24:21</td>
+      <td>42</td>
+      <td>42.94</td>
+    </tr>
+    <tr>
+      <th>110865</th>
+      <td>2016-02-29 09:24:30</td>
+      <td>42</td>
+      <td>42.72</td>
+    </tr>
+    <tr>
+      <th>110866</th>
+      <td>2016-02-29 09:24:41</td>
+      <td>42</td>
+      <td>42.83</td>
+    </tr>
+    <tr>
+      <th>110867</th>
+      <td>2016-02-29 09:24:50</td>
+      <td>42</td>
+      <td>42.81</td>
+    </tr>
+    <tr>
+      <th>110868</th>
+      <td>2016-02-29 09:25:00</td>
+      <td>42</td>
+      <td>42.94</td>
+    </tr>
+  </tbody>
+</table>
+<p>110869 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=f95e8943-stripped" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
@@ -20502,7 +20654,7 @@ Name: time_stamp, dtype: object</pre>
 </div>
 </div>
 
-</div><div id="cell-id=7d446b7d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=a944c618" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
