@@ -14,6 +14,21 @@
 <p></p>
 
 
+## Modulo 2
+
+<p dir="ltr" style="text-align: left;">- Funzioni 1 intro:&nbsp; <a href="http://davidleoni.github.io/ssds-2023/functions/fun1-intro.slides.html">slide</a>&nbsp; &nbsp;|&nbsp; &nbsp;<a href="https://it.softpython.org/functions/fun1-intro-sol.html" target="_blank">SoftPython</a>
+    
+<p dir="ltr" style="text-align: left;"></p>- funzioni 2 gestione errori e testing:&nbsp;<a href="https://davidleoni.github.io/ssds-2023/functions/fun2-errors-and-testing.slides.html#/" target="_blank">Slide</a>&nbsp;|&nbsp;<a href="https://it.softpython.org/functions/fun2-errors-and-testing-sol.html" target="_blank" title="https://it.softpython.org/functions/fun2-errors-and-testing-sol.html">SoftPython</a>&nbsp;&nbsp;<br><br>- esercizi funzioni:&nbsp; &nbsp;<a href="https://it.softpython.org/functions/fun3-strings-sol.html" target="_blank">Funzioni 3 stringhe</a>&nbsp; &nbsp; <a href="https://it.softpython.org/functions/fun4-lists-sol.html">Funzioni 4 liste</a>&nbsp; &nbsp;&nbsp;<a href="https://it.softpython.org/functions/fun5-tuples-sol.html#" target="_blank">Funzioni 5 tuple</a>&nbsp; &nbsp; <a href="https://it.softpython.org/functions/fun6-sets-sol.html" target="_blank">Funzioni 6 insiemi</a>&nbsp; &nbsp;<a href="https://it.softpython.org/functions/fun7-dictionaries-sol.html" target="_blank">Funzioni 7 dizionari</a><br><br>Recupero da modulo 1:<br><br>
+<p dir="ltr" style="text-align: left;">- while 1 intro:&nbsp; <a href="https://davidleoni.github.io/ssds-2023/while/while1.slides.html#/" target="_blank">Slide</a> | <a href="https://it.softpython.org/while/while1-sol.html" target="_blank">SoftPython</a></p>
+
+<p dir="ltr" style="text-align: left;"><br></p>
+<p dir="ltr" style="text-align: left;">-Recupero Sequenze da Modulo 1 :&nbsp; &nbsp;&nbsp;<a href="https://it.softpython.org/sequences/sequences1-sol.html" target="_blank">SoftPython</a></p>
+<p dir="ltr" style="text-align: left;">- Recupero For annidati da Modulo 1 :&nbsp;<a href="https://davidleoni.github.io/ssds-2023/for/for2.slides.html#/6" target="_blank" title="https://davidleoni.github.io/ssds-2023/for/for2.slides.html#/6">Slide</a>&nbsp; |&nbsp;&nbsp;&nbsp;Esercizi SoftPython:&nbsp;<a href="https://it.softpython.org/for/for7-nested-sol.html" target="_blank" title="https://it.softpython.org/for/for7-nested-sol.html">for 7 for annidati</a>&nbsp;&nbsp;<br></p>
+<p dir="ltr" style="text-align: left;">Matrici come liste di liste&nbsp;</p>
+<p dir="ltr" style="text-align: left;">- 1 intro:&nbsp; <a href="https://davidleoni.github.io/ssds-2023/matrices-lists/matrices-lists1.slides.html" target="_blank">Slide</a>&nbsp; |&nbsp; <a href="https://it.softpython.org/matrices-lists/matrices-lists1-sol.html" target="_blank">SoftPython</a>&nbsp; </p>
+<p dir="ltr" style="text-align: left;"><del>- 2 esercizi:&nbsp;&nbsp;&nbsp;</del><a href="https://it.softpython.org/matrices-lists/matrices-lists2-sol.html" target="_blank"><del>SoftPython</del></a>&nbsp; &nbsp;<br></p>
+
+
 ## How to build
 
 Slides built from jupyter notebooks for Python courses, with some quick and dirty integration between:
