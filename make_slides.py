@@ -156,6 +156,8 @@ with open(f'{raw_slides_html}.slides.html', encoding='utf8') as fr:
 
     #ps = ps.replace('</head>',  manual_reveal + '\n</head>')
     ps = ps.replace('</head>',  jupman + icp + ssds + '\n</head>')
+    # useful for weird floating placements you don't want to show in jupyter but only in slides
+    ps = ps.replace('data-jupman-style', 'style')  
     ps = ps.replace("Reveal.addEventListener('slidechanged', update);",
     """
     Reveal.addEventListener('slidechanged', update);

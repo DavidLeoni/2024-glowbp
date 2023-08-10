@@ -186,6 +186,19 @@ div.jp-Cell-inputWrapper:has(.jp-InputArea-editor pre:only-child span:only-child
   display:none !important;
 }
 
+/*  attempt for https://github.com/DavidLeoni/jupman/issues/148      
+*/
+.jupman-floating {
+
+    border-radius: 12px;
+    border: 0;
+  
+    padding: 1.3em;
+
+    box-shadow: 2px 2px 2px 3px #3335;
+}
+
+
 /* ***************   TABLES START  ****************** */
 
 .reveal table {
@@ -536,3 +549,5 @@ div.jp-Cell-inputWrapper:has(.jp-InputArea-editor pre:only-child span:only-child
   /* min-width:100%; */
 }
 /************   ICP END */
+
+
