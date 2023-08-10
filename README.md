@@ -1,6 +1,6 @@
 # SSDS 2023 - Data Science Summer School - informatics module
 
-
+## Modulo 1
 
 <p dir="ltr" style="text-align: left;"></p>
 <p><strong>A.1 Strumenti e basi</strong><br></p>
@@ -28,6 +28,34 @@
 <p dir="ltr" style="text-align: left;">- 1 intro:&nbsp; <a href="https://davidleoni.github.io/ssds-2023/matrices-lists/matrices-lists1.slides.html" target="_blank">Slide</a>&nbsp; |&nbsp; <a href="https://it.softpython.org/matrices-lists/matrices-lists1-sol.html" target="_blank">SoftPython</a>&nbsp; </p>
 <p dir="ltr" style="text-align: left;"><del>- 2 esercizi:&nbsp;&nbsp;&nbsp;</del><a href="https://it.softpython.org/matrices-lists/matrices-lists2-sol.html" target="_blank"><del>SoftPython</del></a>&nbsp; &nbsp;<br></p>
 
+<p dir="ltr" style="text-align: left;">Matrici liste di liste:<br></p>
+<p dir="ltr" style="text-align: left;">-1 intro:&nbsp;&nbsp;<a href="https://davidleoni.github.io/ssds-2023/matrices-lists/matrices-lists1.slides.html" target="_blank">Slide</a>&nbsp; |&nbsp;&nbsp;<a href="https://it.softpython.org/matrices-lists/matrices-lists1-sol.html" target="_blank">SoftPython</a>&nbsp; : recap</p>
+<p dir="ltr" style="text-align: left;"><span style="font-size: 0.9375rem;">- 2 altri esercizi :&nbsp;<a href="https://davidleoni.github.io/ssds-2023/matrices-lists/matrices-lists2.slides.html" target="_blank" title="https://davidleoni.github.io/ssds-2023/matrices-lists/matrices-lists2.slides.html">Slide</a>&nbsp; | &nbsp;&nbsp;</span><a href="https://it.softpython.org/matrices-lists/matrices-lists2-sol.html" target="_blank" style="background-color: rgb(255, 255, 255); font-size: 0.9375rem;">SoftPython</a><span style="font-size: 0.9375rem;">&nbsp; &nbsp;vediamo qualche esercizio&nbsp;</span></p>
+<p dir="ltr" style="text-align: left;"><span style="font-size: 0.9375rem;"><span>- Strutture composte :&nbsp;<a href="https://davidleoni.github.io/ssds-2023/mixed-structures/mixed-structures1.slides.html" target="_blank" title="https://davidleoni.github.io/ssds-2023/mixed-structures/mixed-structures1.slides.html">Slide</a>&nbsp; | &nbsp;&nbsp;</span><a href="https://it.softpython.org/mixed-structures/mixed-structures1-sol.html" target="_blank" title="https://it.softpython.org/mixed-structures/mixed-structures1-sol.html">SoftPython</a>&nbsp; &nbsp;<br></span></p>
+<p dir="ltr" style="text-align: left;"><span style="font-size: 0.9375rem;">Formati File:</span></p>
+<p dir="ltr" style="text-align: left;">- 1 file a linee:&nbsp; <a href="https://davidleoni.github.io/ssds-2023/formats/formats1-lines.slides.html" target="_blank">Slide</a> |&nbsp;&nbsp;<a href="https://it.softpython.org/formats/formats1-lines-sol.html" target="_blank">SoftPython</a></p>
+<p dir="ltr" style="text-align: left;">- 2 file CSV:&nbsp;&nbsp;<a href="https://davidleoni.github.io/ssds-2023/formats/formats2-csv.slides.html" target="_blank" title="https://davidleoni.github.io/ssds-2023/formats/formats2-csv.slides.html">Slide</a>&nbsp;|&nbsp;&nbsp;<a href="https://it.softpython.org/formats/formats2-csv-sol.html" target="_blank" title="https://it.softpython.org/formats/formats2-csv-sol.html">SoftPython</a>&nbsp; &nbsp; (fino a scrittura)<br></p>
+<p dir="ltr" style="text-align: left;"><del>- 3 file JSON e XML:&nbsp;&nbsp;</del><a href="https://davidleoni.github.io/ssds-2023/formats/formats3-json.slides.html" target="_blank" title="https://davidleoni.github.io/ssds-2023/formats/formats3-json.slides.html"><del>Slide</del></a><del>&nbsp;|&nbsp;&nbsp;</del><a href="https://it.softpython.org/formats/formats3-json-sol.html" target="_blank" title="https://it.softpython.org/formats/formats3-json-sol.html"><del>SoftPython</del></a><br></p>
+<p dir="ltr" style="text-align: left;"><br></p>
+
+<p dir="ltr" style="text-align: left;"></p>
+<p dir="ltr"><span style="font-size: 0.9375rem;">Formati File:</span><br></p>
+<p dir="ltr">- 2 file CSV:&nbsp;&nbsp;<a href="https://davidleoni.github.io/ssds-2023/formats/formats2-csv.slides.html" target="_blank" title="https://davidleoni.github.io/ssds-2023/formats/formats2-csv.slides.html">Slide</a>&nbsp;|&nbsp;&nbsp;<a href="https://it.softpython.org/formats/formats2-csv-sol.html" target="_blank" title="https://it.softpython.org/formats/formats2-csv-sol.html">SoftPython</a>&nbsp; &nbsp; da scrittura in poi</p>
+<p dir="ltr"><span style="font-size: 0.9375rem;" class="">- 3 file JSON e XML:&nbsp;&nbsp;</span><a href="https://davidleoni.github.io/ssds-2023/formats/formats3-json.slides.html" target="_blank" title="https://davidleoni.github.io/ssds-2023/formats/formats3-json.slides.html" style="background-color: rgb(255, 255, 255); font-size: 0.9375rem;">Slide</a><span style="font-size: 0.9375rem;" class="">&nbsp;|&nbsp;&nbsp;</span><a href="https://it.softpython.org/formats/formats3-json-sol.html" target="_blank" title="https://it.softpython.org/formats/formats3-json-sol.html" style="background-color: rgb(255, 255, 255); font-size: 0.9375rem;">SoftPython</a></p>
+<p dir="ltr">Numpy:</p>
+<p dir="ltr">- 1 intro:&nbsp; <a href="https://davidleoni.github.io/ssds-2023/matrices-numpy/matrices-numpy1.slides.html" target="_blank" title="https://davidleoni.github.io/ssds-2023/matrices-numpy/matrices-numpy1.slides.html">Slide</a> | <a href="https://it.softpython.org/matrices-numpy/matrices-numpy1-sol.html" target="_blank" title="https://it.softpython.org/matrices-numpy/matrices-numpy1-sol.html">SoftPython</a>&nbsp; &nbsp;(per Nan e infinità bastano le slide, il paragrafo su SoftPython è fin troppo dettagliato )</p>
+<p dir="ltr"></p>
+<p dir="ltr">- 2 esercizi:&nbsp;&nbsp;<a href="https://it.softpython.org/matrices-numpy/matrices-numpy2-sol.html" target="_blank" title="https://it.softpython.org/matrices-numpy/matrices-numpy2-sol.html">SoftPython</a></p>
+<p dir="ltr">Visualizzazione:&nbsp;</p>
+<p dir="ltr">- 1 intro:&nbsp;&nbsp;<a href="https://davidleoni.github.io/ssds-2023/visualization/visualization1.slides.html" target="_blank">Slide</a>&nbsp;|&nbsp;<a href="https://it.softpython.org/visualization/visualization1-sol.html" target="_blank">SoftPython</a></p><br><br>
+<p></p>
+
+<p dir="ltr" style="text-align: left;"><br></p>
+<p dir="ltr" style="text-align: left;">Pandas:</p>
+<p dir="ltr" style="text-align: left;">- 1 intro:&nbsp; <a href="https://it.softpython.org/pandas/pandas1-sol.html" target="_blank">SoftPython</a>&nbsp; &nbsp;<br><del>- 2 esercizi:&nbsp;&nbsp;</del><a href="https://it.softpython.org/pandas/pandas2-sol.html" target="_blank"><del>SoftPython</del></a>&nbsp; (9 agosto) ho spostato gli esercizi rilevanti per l'esame nel foglio 1</p>
+<p dir="ltr" style="text-align: left;">Progetti svolti:<br>-&nbsp;<a href="https://it.softpython.org/#D.1-Progetti-svolti" target="_blank">Progetti su SoftPython in italiano</a>&nbsp;(pochi)<br>-&nbsp;<a href="https://en.softpython.org/#Worked-projects" target="_blank">Progetti su SoftPython in inglese</a>&nbsp;(tanti): OPZIONALE a chi interessa può guardare i progetti nelle sezioni Text data e Tabular data (per chi vuole ci sono anche altri progetti sulle reti di relazioni ma per fare quelli prima dovreste leggervi il&nbsp;<a href="https://en.softpython.org/relational/relational1-intro-sol.html" target="_blank">tutorial Relational data</a>)<br></p>
+<p dir="ltr" style="text-align: left;"><br></p>
+<p dir="ltr" style="text-align: left;"><br></p>
 
 ## How to build
 
