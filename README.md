@@ -57,7 +57,7 @@ Slides built from jupyter notebooks for Python courses, with some quick and dirt
 
 The process is the following:
 
-1. Set up wnvironment according to jupman [Local build with Sphinx setup instructions](https://jupman.softpython.org/en/latest/manual/quickstart.html#Local-build-with-Sphinx)
+1. Set up environment according to jupman [Local build with Sphinx setup instructions](https://jupman.softpython.org/en/latest/manual/quickstart.html#Local-build-with-Sphinx)
 2. author a jupyter notebook ending in `-sol.ipynb` by using mostly markdown text, sometimes html (for i.e. tables) 
     - mark code you don't want students to see with special jupman tags
     - run Python code in Jupyter to produce HTML widgets for ICP and Python tutor, so the result is immediately visible while authoring
