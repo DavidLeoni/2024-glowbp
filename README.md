@@ -67,4 +67,8 @@ The process is the following:
     3. crudely processes html generated from nbconvert to inject various scripts and css
 
 
-Downsides: organizing cells in multicolumn layout still has to be done in html which may be cumbersome, in pandas notebooks there is [some example workaround](https://github.com/DavidLeoni/jupman/issues/148)
+## Known issues:
+
+- currently [my ICP adaptation is buggy](https://github.com/DavidLeoni/ssds-2023/issues/3)
+- organizing cells in multicolumn layout still has to be done in html which may be cumbersome, in pandas notebooks there is [some example workaround](https://github.com/DavidLeoni/jupman/issues/148)
+
