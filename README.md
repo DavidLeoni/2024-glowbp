@@ -1,6 +1,6 @@
 # Slides SoftPython (in italiano)
 
-Tratte dal libro it.softpython.org
+Tratte dal libro [https://it.softpython.org](it.softpython.org)
 
 ## [VEDI LE SLIDE](https://davidleoni.github.io/softpython-it-slides)
 
