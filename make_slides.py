@@ -1,7 +1,7 @@
 #/usr/bin/python3/tmp/lists/lists1-sol.slides.html
 
 
-""" Given a number N, reads parteN-sol.ipynb and generates parteN.slides.html  (without the -sol!)
+""" Given a partial notebook path like lists/lists1  , reads lists/lists1-sol.ipynb and generates lists/lists1.slides.html  (without the -sol!)
 
 DIRTY script! 
 
@@ -44,7 +44,7 @@ print(args.slide)
 sn = args.slide
 
 if sn == -1:
-    print("Please specify a slide number. Aborting.")
+    print("Please specify a partial notebook path without the -sol.ipynb like    make_slides.py lists/lists1     Aborting.")
     exit(1)
 
 prefix = f'{sn}'
